@@ -1,12 +1,12 @@
-Grupo n° 9	
+Grupo N° 9	
 
-integrantes:	
+Integrantes:	
 
 Andres Sueyro;	
 Jonathan Mariano Morel;	
 Mariano Simantob; 	
 Tobias Maffia;	 
 
-Descripcion del producto:	
-E-comerse de instrumentos musicales orientado a musicos principiantes y amateur como a quienes quieran comenzar en el mundo de la musica	
+Descripción del producto:	
+E-commerce de instrumentos musicales orientado a músicos profesionales, principiantes y amateur como a quienes quieran comenzar en el mundo de la música.
 
