@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <meta charset="utf-8">
+        <title>Music box</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/public/css/register.css"> 
+    </head>
+    <body>
+        <header>
+            <div>
+                <img src="/public/images/Imagen de iOS (1).jpg" alt="logo">
+            </div>
+        </header>
+        <main>
+            <form action="/register" class="register" method="POST">
+               
+                <div class="caja"> 
+                    <h1>Formulario de registro</h1>
+                    
+                    <div class="form">
+                        <label for="nombre">Nombre</label>
+                        <input class="barra" type="text" name="nombre" id="nombre" placeholder="andres" required>
+                    </div>
+                    <div class="form">
+                        <label for="nick">Nombre de usuario</label>
+                        <input class="barra" type="text" name="nick" id="nick" placeholder="primus" required>
+                    </div>
+                    <div class="form">
+                        <label for="dni">DNI</label>
+                        <input class="barra" type="tel" name="dni" id="dni" placeholder="12345678" required>
+                        
+                    </div>  
+                    <div class="form">
+                        
+                        <label for="pass">Contraseña</label>
+                        <input class="barra" type="password" name="pass" id="pass" placeholder="*******" required>
+                    </div>
+                    <div class="form">
+                        <label for="email">Email</label>
+                        <input class="barra" type="email" name="email" id="email" placeholder="mail@gmail.com" required>
+                        
+                    </div>
+                    <div class="form">
+                        <label  for="repass">Repetir Contraseña</label>
+                        <input class="barra" type="password" name="repass" id="repass" required>
+                    </div>
+                    
+                    <div class="terminos, hl">
+                        <input type="checkbox" name="terminos" id="TyC" required>
+                        <label for="TyC">Acepto los terminos y condiciones</label>
+                    </div>
+                    <div class="terminos">
+                        <input type="checkbox" name="terminos" id="TyC" >
+                        <label for="TyC">deseo recibir notificaciones a mi email acerca de actualizaciones 
+                    <div class="botones">
+                        <button type="reset">Borrar</button>
+                        <button type="submit">Aceptar</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+h1{
+    width: 100%;
+    padding-bottom: 25px;
+}
+
+header{
+    height: 50px;
+    background-color: black;
+    border-bottom: solid 2px rgb(250, 172, 48);
+    
+}
+
+body{
+    background-color: black;
+}
+
+header img{
+    height: 48px;;
+    
+}
+
+main{
+    width: 90%;
+    margin: auto;
+}
+
+.register{
+    padding: 20px 15px;
+}
+
+
+
+.form{
+    
+    width: 50%;
+    margin-bottom: 15px;
+    
+}
+
+.caja{
+    padding: 10%;
+    background: rgb(139,80,20);
+    background: linear-gradient(180deg, rgba(78,42,5,1) 0%, rgba(236,145,46,1) 50%, rgba(78,42,5,1) 100%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgb(214, 206, 206);
+    
+}
+
+.terminos{
+    width: 100%;
+    
+}
+
+.hl{
+    padding-top: 20px;
+}
+
+.form label{
+    
+    display: block;
+}
+
+button{
+    
+    color:white;
+    background-color: black;
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+button:hover{
+    background-color: rgb(248, 184, 81);
+    color: black;
+}
+
+button:active{
+    background-color: white;
+}
+
+.barra{
+    background-color: rgb(71, 70, 70);
+    color: white;
+    border-radius: 5px;
+    border: solid 1px black;
+    padding: 5px;
+    text-align: center;
+    
+}
+
+::placeholder { color: rgba(255, 255, 255, 0.418); }
