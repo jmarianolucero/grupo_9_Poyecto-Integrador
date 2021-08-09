@@ -9,28 +9,20 @@ h1{
     padding-bottom: 25px;
 }
 
-header{
-    height: 50px;
-    background-color: black;
-    border-bottom: solid 2px rgb(250, 172, 48);
-    
-}
+
 
 body{
-    background-color: black;
+    background-color: white;
 }
 
-header img{
-    height: 48px;;
-    
-}
+
 
 main{
     width: 90%;
     margin: auto;
 }
 
-.register{
+.caja{
     padding: 20px 15px;
 }
 
@@ -45,13 +37,13 @@ main{
 
 .caja{
     padding: 10%;
-    background: rgb(139,80,20);
-    background: linear-gradient(180deg, rgba(78,42,5,1) 0%, rgba(236,145,46,1) 50%, rgba(78,42,5,1) 100%);
+    background: white;
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    box-shadow: 0px 0px 10px rgb(214, 206, 206);
+    
     
 }
 
@@ -80,17 +72,17 @@ button{
 }
 
 button:hover{
-    background-color: rgb(248, 184, 81);
+    background-color: white;
     color: black;
 }
 
 button:active{
-    background-color: white;
+    background-color: #1985a1;
 }
 
 .barra{
-    background-color: rgb(71, 70, 70);
-    color: white;
+    background-color: white;
+    color: black;
     border-radius: 5px;
     border: solid 1px black;
     padding: 5px;
@@ -98,4 +90,3 @@ button:active{
     
 }
 
-::placeholder { color: rgba(255, 255, 255, 0.418); }
