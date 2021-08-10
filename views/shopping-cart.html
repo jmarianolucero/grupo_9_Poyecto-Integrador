@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+    <link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+		/>
+        <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/shopping-cart.css">
+</head>
+<body>
+    <header>
+        <article class="top-header">
+            <article class="contenedor1">
+                <article class="logo">
+                    <img src="/images/Logo Music Box.png" alt="Logo de Music Box">
+                </article>
+                <article><i class="fas fa-map-marker-alt"></i></article>
+            </article>
+            <article class="contenedor2">
+                <form action="/" method="GET">
+                    <article>
+                        <input type="text" name="busqueda" placeholder="Buscá aquí tu producto" class="search-bar"><i class="fas fa-search"></i>
+                    </article>   
+                </form>
+            </article>
+            <article class="contenedor3">
+                <article class="register">
+                    <a href="/register">Registrate</a>
+                </article>
+                <article class="login">
+                    <a href="/login">Iniciá Sesión</a>
+                </article>
+                
+                <article class="user-account">
+                    <i class="far fa-user-circle"></i>
+                </article>
+                <article class="carrito">
+                    <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+                </article>
+            </article>
+        </article>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="#">Cuerdas</a>
+                </li>
+                <li>
+                    <a href="#">Percusión</a>
+                </li>
+                <li>
+                    <a href="#">Viento</a>
+                </li>
+                <li>
+                    <a href="#">Sonido</a>
+                </li>
+                <li>
+                    <a href="#">Accesorios</a>
+                </li>
+                <li>
+                    <a href="#">Taller</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+        <div class="main-container">
+        <div>
+            <h1>TU CARRITO</h1>
+        </div>
+        <div class="list-container">
+        <article class="product">
+            <div class="product-image">
+            <img src="/images/Guitarra Eléctrica Music Box.png" alt="Guitarra Eléctrica">
+            </div>
+            <div class="description">
+              <h3 class="name">Guitarra Electrica Fender Stratocaster Standar Mexico Rsw Sb</h3>
+              <h4 class="cantidad">Cantidad
+                <select name="cantidad" id="cantidad-productos">Cantidad
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </h4>
+                <p class="underline">Eliminar</p>
+            </div>
+            <div>
+              <h3 class="cost">$185.683,00</h3>
+            </div>
+        </article>
+        <article class="product">
+            <div class="product-image">
+            <img src="/images/violin-stradella-mv1415.png" alt="Violin">
+            </div>
+            <div class="description">
+              <h3 class="name">Violin Stradella MV1415</h3>
+              <h4 class="cantidad">Cantidad
+                <select name="cantidad" id="cantidad-productos">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+               </h4>
+                <p class="underline">Eliminar</p>
+            </div>
+            <div>
+              <h3 class="cost">$25.720,00</h3>
+            </div>         
+        </article>
+        <article class="product">
+            <div class="product-image">
+            <img src="/images/teclado-yamaha.png" alt="Teclado">
+            </div>
+            <div class="description">
+              <h3 class="name">Teclado Yamaha PSR Series PSR-EW410</h3>
+              <h4 class="cantidad">Cantidad
+                <select name="cantidad" id="cantidad-productos">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </h4>
+                <p class="underline">Eliminar</p>
+            </div>
+            <div>
+              <h3 class="cost">$63.561,00</h3>
+            </div>
+        </article>
+        </div>
+        
+        <article class="subtotal">
+           <div class="total-item">
+            <h4>Productos(3)</h4>
+            <a href="#">Calcular envío</a>
+            </div>
+            <div>
+            <h4 class="cost">$274.964,00</h4>
+            <p>$0</p>
+            </div>
+        </article>
+
+        <article class="total"> 
+            <div class="total-cost">
+              <div>
+                 <h3>Total</h3>
+              </div>
+              <div>
+            <h3 class="final-cost">$274.964,00</h3>
+              </div>
+            </div>          
+            <button>Continuar</button>  
+            <a href="/product" id="back">&lt Seguir Comprando</a>
+        </article> 
+        
+        </div>
+        
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
