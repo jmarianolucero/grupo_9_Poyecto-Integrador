@@ -101,7 +101,7 @@ section{
     flex-wrap: wrap;
     width: 90%;
     justify-content: space-between;
-    border: 5px solid gray;
+    border: 1px solid gray;
     padding: 15px;
 }
 
@@ -117,7 +117,7 @@ section{
     display: flex;
     flex-wrap: wrap;
     width: 90%;
-    border: 5px solid gray;
+    border: 1px solid gray;
     padding: 15px;
     justify-content: flex-end;
 }
@@ -126,7 +126,7 @@ section{
     display: flex;
     flex-wrap: wrap;
     width: 90%;
-    border: 5px solid gray;
+    border: 1px solid gray;
     padding: 15px;;
     flex-direction: column;
     align-items: flex-end;
