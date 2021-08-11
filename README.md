@@ -21,3 +21,6 @@ Referentes:
 - https://www.mercadolibre.com.ar/
 
 - https://tiendamia.com.ar/
+
+Tablero TRELLO: 
+https://trello.com/b/sVRz2Cf2/proyecto-dh
