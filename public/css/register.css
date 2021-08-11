@@ -22,8 +22,15 @@ main{
     margin: auto;
 }
 
-.caja{
-    padding: 20px 15px;
+.formulario{
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100); 
+    
 }
 
 
@@ -33,6 +40,10 @@ main{
     width: 50%;
     margin-bottom: 15px;
     
+}
+
+.form input{
+    width: 80%;
 }
 
 .caja{

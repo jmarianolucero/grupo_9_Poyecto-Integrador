@@ -5,15 +5,15 @@
         <title>Music box</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
-        <link rel="stylesheet" href="/public/css/register.css"> 
-        <link rel="stylesheet" href="/public/css/product.css">
+        <link rel="stylesheet" href="css/register.css"> 
+        <link rel="stylesheet" href="css/product.css">
     </head>
     <body>
         <header>
             <div class="top-header">
                 <div class="contenedor1">
                     <div class="logo">
-                        <img src="/public/images/Logo Music Box.png" alt="Logo de Music Box">
+                        <img src="images/Logo Music Box.png" alt="Logo de Music Box">
                     </div>
                     <div><i class="fas fa-map-marker-alt"></i></div>
                 </div>
@@ -66,35 +66,27 @@
         <main>
             <form action="/register" class="caja" method="POST">
                
-                <div class="caja"> 
+                <div class="formulario"> 
                     <h1>Formulario de registro</h1>
                     
                     <div class="form">
-                        <label for="nombre">Nombre</label>
-                        <input class="barra" type="text" name="nombre" id="nombre" placeholder="andres" required>
+                        <input class="barra" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
                     </div>
                     <div class="form">
-                        <label for="nick">Nombre de usuario</label>
-                        <input class="barra" type="text" name="nick" id="nick" placeholder="primus" required>
+                        <input class="barra" type="text" name="nick" id="nick" placeholder="Nombre de usuario" required>
                     </div>
                     <div class="form">
-                        <label for="dni">DNI</label>
-                        <input class="barra" type="tel" name="dni" id="dni" placeholder="12345678" required>
-                        
+                        <input class="barra" type="tel" name="dni" id="dni" placeholder="DNI" required>
                     </div>  
                     <div class="form">
-                        
-                        <label for="pass">Contraseña</label>
-                        <input class="barra" type="password" name="pass" id="pass" placeholder="*******" required>
+                        <input class="barra" type="password" name="pass" id="pass" placeholder="Contraseña" required>
                     </div>
                     <div class="form">
-                        <label for="email">Email</label>
-                        <input class="barra" type="email" name="email" id="email" placeholder="mail@gmail.com" required>
+                        <input class="barra" type="email" name="email" id="email" placeholder="Email" required>
                         
                     </div>
                     <div class="form">
-                        <label  for="repass">Repetir Contraseña</label>
-                        <input class="barra" type="password" name="repass" id="repass" required>
+                        <input class="barra" type="password" name="repass" id="repass" placeholder="Repetir Contraseña" required>
                     </div>
                     
                     <div class="terminos, hl">
