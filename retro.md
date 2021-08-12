@@ -19,7 +19,7 @@ Deltas:
 • More Of: 
  La comunicación e intercambio sobre el avance del proyecto podría tener alguna mejoría, pero con el correr de los sprints se va a ir ajustando.
 
-Keep Doing: 
+• Keep Doing: 
  Utilización de Slack como vía de contacto por sus prestaciones y practicidad. Feedback entre colaboradores y exposición de ideas para llegar a un consenso.
 
 • Less Of / Stop Doing: 
