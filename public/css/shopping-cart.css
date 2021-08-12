@@ -8,7 +8,7 @@ body{
 }
 
 .top-header{
-    width: 100%;
+    max-width: 100%;
     top: 0%;
     left: 0%;
     display: flex;
@@ -49,7 +49,7 @@ body{
     color: white;
 }
 .search-bar{
-    width: 200px;
+    max-width: 100%;
     border-radius: 5px;
 }
 form i{
@@ -82,14 +82,16 @@ form div input{
 /*COMIENZA EL MAIN*/
 
 section{
-    width:100%;
-    padding: 15px;
-    padding-top: 30px;
+    max-width:100%;
+    padding: 30px 15px 15px 15px;
+    display: flex;
+    justify-content: center;
 }
 
 .main-container{
     padding-left: 90px;
-    padding-right: 15px;
+    padding-right: 90px;
+    
 }
 .list-container{
     display: flex;
@@ -99,10 +101,10 @@ section{
 .product{
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
     justify-content: space-between;
     border: 1px solid gray;
     padding: 15px;
+    width: 100%;
 }
 
 .description{
@@ -116,7 +118,6 @@ section{
 .subtotal{
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
     border: 1px solid gray;
     padding: 15px;
     justify-content: flex-end;
@@ -125,7 +126,6 @@ section{
 .total{
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
     border: 1px solid gray;
     padding: 15px;;
     flex-direction: column;
@@ -133,7 +133,7 @@ section{
 }
 
 
-img{
+.immagen-producto{
     width: 100px;
     height: 100px;
     justify-content:start;
@@ -184,4 +184,16 @@ button{
 
 #back{
     align-self: flex-start;
+}
+
+footer{
+    padding:30px 15px 15px 15px;
+    background-color:#1985a1;
+}
+
+.list-inline{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 10%;
 }
