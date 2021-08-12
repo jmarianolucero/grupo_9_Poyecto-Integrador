@@ -54,3 +54,13 @@ main{
         width: 50%;
     }
 }
+
+.benefits{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    background-color: #4c5c68;
+    color: white;
+    justify-content: space-evenly;
+    align-items: center;
+}
