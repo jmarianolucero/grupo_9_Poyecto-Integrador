@@ -16,7 +16,7 @@
         <div class="top-header">
             <div class="contenedor1">
                 <div class="logo">
-                    <img src="/images/Logo Music Box.png" alt="Logo de Music Box">
+                    <a href="/"><img src="/images/Logo Music Box.png" alt="Logo de Music Box"></a>
                 </div>
                 <div><i class="fas fa-map-marker-alt"></i></div>
             </div>
@@ -85,7 +85,7 @@
                         <ul class="shopping-options">
                             <li><i class="fas fa-award"></i> Garantía Oficial</li>
                             <li><i class="fas fa-truck"></i> Envío gratis desde $10.000</li>
-                            <li><i class="far fa-credit-card"></i>3, 6 y 12 c/ sin interés</li>
+                            <li><i class="far fa-credit-card"></i> 3, 6 y 12 c/ sin interés</li>
                         </ul>
                         
                     </p>
@@ -129,7 +129,9 @@
                             <li>Golpeador de 3 capas pergamino</li>
                         </ul>
                         <div class="add-cart">
-                            <button type="button">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
+                            <form action="/carrito" method="GET">
+                                <button type="submit">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
+                            </form>
                         </div>
                     </div>
                     <div class="div-line"></div>
@@ -139,7 +141,13 @@
         </section>
     </main>
     <footer>
-        
+        <div class="list-inline">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+          <p>Copyright<i class="far fa-copyright"></i>All rights reserved</p> 
     </footer>
     
 </body>

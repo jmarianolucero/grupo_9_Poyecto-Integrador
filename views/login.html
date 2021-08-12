@@ -6,8 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/register.css"> 
+        <link rel="stylesheet" href="css/login.css"> 
         <link rel="stylesheet" href="css/product.css">
+        <link rel="stylesheet" href="css/register.css">
     </head>
     <body>
         <header>
@@ -21,7 +22,7 @@
                 <div class="contenedor2">
                     <form action="/" method="GET">
                         <div>
-                            <input type="text" name="busqueda" placeholder="Buscá aquí tu producto" class="search-bar"><i class="fas fa-search"></i>
+                            <input type="text" name="busqueda" placeholder="Buscá aquí tu producto" id="search-bar"><i class="fas fa-search"></i>
                         </div>   
                     </form>
                 </div>
@@ -65,43 +66,31 @@
             </nav>
         </header>
         <main>
-            <form action="/register" class="caja" method="POST">
-               
+         
+            <form action="/" class="caja" method="GET">
                 <div class="formulario"> 
-                    <h1>Formulario de registro</h1>
-                    
-                    <div class="form">
-                        <input class="barra" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                    <div id="formContent">
+                      <h2 class="active"> Inicia sesión </h2>
+                      <h2 class="inactive underlineHover">Registrate</h2>
+                  
+                      <div id="logoLogin">
+                        <img src="images/Logo Music Box.png" alt="Logo de Music Box">
+                      </div>
+        
+                      <form>
+                        <input type="text" id="login"  name="login" placeholder="Inicia Sesión">
+                        <input type="password" id="password"  name="password" placeholder="Contraseña">
+                        <input type="submit" value="Inicia Sesión">
+                      </form>
+   
+                
+                      <div id="formFooter">
+                        <a class="underlineHover" href="#">Olvidaste tu contraseña?</a>
+                      </div>
+                  
                     </div>
-                    <div class="form">
-                        <input class="barra" type="text" name="nick" id="nick" placeholder="Nombre de usuario" required>
-                    </div>
-                    <div class="form">
-                        <input class="barra" type="tel" name="dni" id="dni" placeholder="DNI" required>
-                    </div>  
-                    <div class="form">
-                        <input class="barra" type="password" name="pass" id="pass" placeholder="Contraseña" required>
-                    </div>
-                    <div class="form">
-                        <input class="barra" type="email" name="email" id="email" placeholder="Email" required>
-                        
-                    </div>
-                    <div class="form">
-                        <input class="barra" type="password" name="repass" id="repass" placeholder="Repetir Contraseña" required>
-                    </div>
-                    
-                    <div class="terminos, hl">
-                        <input type="checkbox" name="terminos" id="TyC" required>
-                        <label for="TyC">Acepto los terminos y condiciones</label>
-                    </div>
-                    <div class="terminos">
-                        <input type="checkbox" name="terminos" id="TyC" >
-                        <label for="TyC">deseo recibir notificaciones a mi email acerca de actualizaciones 
-                    <div class="botones">
-                        <button type="reset">Borrar</button>
-                        <button type="submit">Aceptar</button>
-                    </div>
-                </div>
+                  </div>
+               
             </form>
         </main>
         <footer>
