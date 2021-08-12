@@ -6,9 +6,13 @@
 body{
     font-family: 'Exo', sans-serif;
 }
+header{
+    max-width: 100%;
+}
 .top-header{
     max-width: 100%;
     width: 100%;
+    height: auto;
     top: 0%;
     left: 0%;
     display: flex;
@@ -17,15 +21,16 @@ body{
     align-items: center;
     position: relative;
     background-color: #1985a1;
-    padding: 15px;
+    padding: 10px;
     color: white;
+    box-sizing: border-box;
 }
 
 .contenedor1{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 40px;
+    height: 30%;
     padding: 5px;
 }
 .contenedor2{
@@ -78,12 +83,22 @@ form div input{
     text-decoration: none;
     color: white;
 }
+main{
+    max-width: 100%;
+    width: 90%; 
+}
+
 .product{
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
+    max-width: 100%;
+    height: auto;
+    width: 90%;
+    box-sizing: border-box;
 }
 .product-image{
-    margin-right: 100px;
+    margin-right: 10%;
+    
 }
 .main-description{
     margin-top: 35px;
@@ -105,12 +120,11 @@ form div input{
 }
 .main-description .shopping-options{
     list-style: none;
-    margin-top: 20px;
-    padding: 15px 0px;
+    padding: 2% 0px;
     border-bottom: #46494c;
 }
 .main-description ul li{
-    height: 35px;
+   padding: 1%;
 }
 .div-line{
     margin: 15px;
@@ -125,24 +139,24 @@ form div input{
 }
 .select-color select{
     font-family: 'Exo', sans-serif;
-    width: 170px;
+    width: 100%;
     border-radius: 5px;
 }
 .product-description{
     display: flex;
     justify-content: space-between;
-    
     margin-left: 30px;
 }
 .description ul{
     margin-top: 20px;
     margin-left: 20px;
+    line-height: 10%;
 }
 .add-cart button{
     position: relative;
     color: white;
     font-size: 16px;
-    width: 200px;
+    width: 170px;
     height: 50px;
     background-color: #1985a1;
     opacity: 70%;
