@@ -108,7 +108,7 @@ main{
 .puntaje{
     display: flex;
     margin-top: 15px;
-    color: #c5c3c6;
+    color: #1985a1;
 }
 .main-description h2{
     font-size: 33px;
@@ -122,6 +122,9 @@ main{
     list-style: none;
     padding: 2% 0px;
     border-bottom: #46494c;
+}
+.shopping-options i{
+    color: #1985a1;
 }
 .main-description ul li{
    padding: 1%;
@@ -159,9 +162,12 @@ main{
     width: 170px;
     height: 50px;
     background-color: #1985a1;
-    opacity: 70%;
     border-radius: 20px;
 }
 article h3{
     margin-bottom: 20px;
+}
+.add-cart button:hover{
+    background-color: #1985a1;
+    opacity: 70%;
 }
