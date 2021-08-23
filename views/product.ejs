@@ -1,71 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./partials/head')%>
     <title>Guitarra Electrica Fender Stratocaster Standar Mexico Rsw Sb</title>
-    <link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-		/>
-        <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/product.css">
 </head>
 <body>
-    <header>
-        <div class="top-header">
-            <div class="contenedor1">
-                <div class="logo">
-                    <a href="/"><img src="images/Logo Music Box.png" alt="Logo de Music Box"></a>
-                </div>
-                <div><i class="fas fa-map-marker-alt"></i></div>
-            </div>
-            <div class="contenedor2">
-                <form action="/" method="GET">
-                    <div>
-                        <input type="text" name="busqueda" placeholder="Buscá aquí tu producto" class="search-bar"><i class="fas fa-search"></i>
-                    </div>   
-                </form>
-            </div>
-            <div class="contenedor3">
-                <div class="register">
-                    <a href="/register">Registrate</a>
-                </div>
-                <div class="login">
-                    <a href="/login">Iniciá Sesión</a>
-                </div>
-                
-                <div class="user-account">
-                    <i class="far fa-user-circle"></i>
-                </div>
-                <div class="carrito">
-                    <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-            </div>
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li>
-                    <a href="#">Cuerdas</a>
-                </li>
-                <li>
-                    <a href="#">Percusión</a>
-                </li>
-                <li>
-                    <a href="#">Viento</a>
-                </li>
-                <li>
-                    <a href="#">Sonido</a>
-                </li>
-                <li>
-                    <a href="#">Accesorios</a>
-                </li>
-                <li>
-                    <a href="#">Taller</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <%- include('./partials/header')%>
     <main>
         <section>
             <div class="product">
@@ -140,15 +81,7 @@
 
         </section>
     </main>
-    <footer>
-        <div class="list-inline">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-          </div>
-          <p>Copyright<i class="far fa-copyright"></i>All rights reserved</p> 
-    </footer>
+    <%- include('./partials/footer')%>
     
 </body>
 </html>

@@ -1,72 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <%- include('./partials/head')%>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de compras</title>
-    <link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-		/>
-        <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/shopping-cart.css">
 </head>
 <body>
-    <header>
-        <article class="top-header">
-            <article class="contenedor1">
-                <article class="logo">
-                    <a href="/"><img src="images/Logo Music Box.png" alt="Logo de Music Box"></a>
-                </article>
-                <article><i class="fas fa-map-marker-alt"></i></article>
-            </article>
-            <article class="contenedor2">
-                <form action="/" method="GET">
-                    <article>
-                        <input type="text" name="busqueda" placeholder="Buscá aquí tu producto" class="search-bar"><i class="fas fa-search"></i>
-                    </article>   
-                </form>
-            </article>
-            <article class="contenedor3">
-                <article class="register">
-                    <a href="/register">Registrate</a>
-                </article>
-                <article class="login">
-                    <a href="/login">Iniciá Sesión</a>
-                </article>
-                
-                <article class="user-account">
-                    <i class="far fa-user-circle"></i>
-                </article>
-                <article class="carrito">
-                    <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                </article>
-            </article>
-        </article>
-        <nav class="navbar">
-            <ul>
-                <li>
-                    <a href="#">Cuerdas</a>
-                </li>
-                <li>
-                    <a href="#">Percusión</a>
-                </li>
-                <li>
-                    <a href="#">Viento</a>
-                </li>
-                <li>
-                    <a href="#">Sonido</a>
-                </li>
-                <li>
-                    <a href="#">Accesorios</a>
-                </li>
-                <li>
-                    <a href="#">Taller</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <%- include('./partials/header')%>
     <main>
         <section>
         <div class="main-container">
@@ -167,15 +108,7 @@
         
         </section>
     </main>
-    <footer>
-        <div class="list-inline">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-          </div>
-          <p>Copyright<i class="far fa-copyright"></i>All rights reserved</p>
-    </footer>
+    <%- include('./partials/footer')%>
     
 </body>
 </html>
