@@ -7,78 +7,6 @@ body{
     font-family: 'Exo', sans-serif;
 }
 
-.top-header{
-    max-width: 100%;
-    top: 0%;
-    left: 0%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    background-color: #1985a1;
-    padding: 15px;
-    color: white;
-}
-
-.contenedor1{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 40px;
-    padding: 5px;
-}
-.contenedor2{
-    display: flex;
-}
-.contenedor3{
-    display: flex;
-    margin-right: 15px;
-    padding-right: 15px;
-}
-.register a{
-    margin: 0px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-}
-.login a{
-    margin: 0px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-}
-.search-bar{
-    max-width: 100%;
-    border-radius: 5px;
-}
-form i{
-    color: white;
-}
-form div input{
-    font-family: 'Exo', sans-serif;
-    font-weight: 700;
-}
-.logo{
-    margin-right: 15px;
-}
-.carrito a i{
-    color: white;
-    margin-left: 10px;
-}
-.navbar ul{
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 10px;
-    list-style: none;
-    background-color: #4c5c68;
-}
-.navbar ul li a{
-    text-decoration: none;
-    color: white;
-}
-
 /*COMIENZA EL MAIN*/
 
 section{
@@ -186,14 +114,3 @@ button{
     align-self: flex-start;
 }
 
-footer{
-    padding:30px 15px 15px 15px;
-    background-color:#1985a1;
-}
-
-.list-inline{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 10%;
-}

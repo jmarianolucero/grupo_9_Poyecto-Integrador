@@ -13,6 +13,7 @@ h1{
 
 body{
     background-color: white;
+    font-family: 'Exo', sans-serif;
 }
 
 
@@ -99,16 +100,4 @@ button:active{
     padding: 5px;
     text-align: center;
     
-}
-
-footer{
-    padding:30px 15px 15px 15px;
-    background-color:#1985a1;
-}
-
-.list-inline{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 10%;
 }

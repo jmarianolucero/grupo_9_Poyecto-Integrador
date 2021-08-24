@@ -1,0 +1,77 @@
+header{
+    max-width: 100%;
+}
+.top-header{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    top: 0%;
+    left: 0%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #1985a1;
+    padding: 10px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.contenedor1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30%;
+    padding: 5px;
+}
+.contenedor2{
+    display: flex;
+}
+.contenedor3{
+    display: flex;
+    margin-right: 15px;
+    padding-right: 15px;
+}
+.register a{
+    margin: 0px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+.login a{
+    margin: 0px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+.search-bar{
+    width: 200px;
+    border-radius: 5px;
+}
+form i{
+    color: white;
+}
+form div input{
+    font-family: 'Exo', sans-serif;
+    font-weight: 700;
+}
+.logo{
+    margin-right: 15px;
+}
+.carrito a i{
+    color: white;
+    margin-left: 10px;
+}
+.navbar ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 10px;
+    list-style: none;
+    background-color: #4c5c68;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+}
