@@ -4,6 +4,7 @@
     <%- include('./partials/head')%>
     <title>Crear producto</title>
     <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/new-product.css">
 </head>
 <body>
     <%- include('./partials/header')%>
@@ -16,7 +17,7 @@
                     <input type="text" class="" name="titulo-producto" required>
                 </div>
                 <div class="form">
-                    <textarea name="descripcion" id="descripcion" cols="30" rows="10">Descripción</textarea>
+                    <textarea name="descripcion" id="descripcion" cols="30" rows="5" placeholder="Descripción"></textarea>
                 </div>
                 <div class="form">
                     <label>Imagen de producto</label>
@@ -35,21 +36,27 @@
                     </select>
                 </div>
                 <div class="form">
-                    <label>Color:</label>
+                   <label>Color:</label>
+                   <div class="color-checkbox">
                     <label for="colores">Blanco<input type="checkbox" name="colores" value="Blanco"></label>
                     <label for="colores">Negro<input type="checkbox" name="colores" value="Negro"></label>
                     <label for="colores">Rojo<input type="checkbox" name="colores" value="Rojo"></label>
                     <label for="colores">Azúl<input type="checkbox" name="colores" value="Azúl"></label>
                     <label for="colores">Naranja<input type="checkbox" name="colores" value="Naranja"></label>
                     <label for="colores">Verde<input type="checkbox" name="colores" value="Verde"></label>
+                   </div>
+                    
                 </div>
                 <div class="form">
                     <label for="precio">Precio: </label>
                     <input type="text" name="precio" id="precio" required>
                 </div>
+                
 
             </div>
-
+            <button type="submit">Crear</button>
+            <button type="reset">Borrar</button>
+            
         </form>
     </main>
     <%- include('./partials/footer')%>

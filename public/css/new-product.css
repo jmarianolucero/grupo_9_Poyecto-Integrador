@@ -57,13 +57,42 @@ header{
     width: 200px;
     border-radius: 5px;
 }
-form i{
-    color: #1985a1;
-    background-color: white;
+form h2{
+    font-size: 20px;
+    text-align: left;
+    color: #46494c;
+    
 }
-form div input{
+.new-product-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #46494c;
+    padding-bottom: 5%;
+}
+div .form{
     font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    padding: 1%;
+    padding-left: 2px;
     font-weight: 700;
+}
+div .form label{
+    font-size: 18px;
+}
+.color-checkbox label{
+    padding: 5px;
+    font-size: 14px;
+}
+button {
+    color: white;
+    font-size: 16px;
+    width: 170px;
+    height: 50px;
+    background-color: #1985a1;
+    border-radius: 5px;
+    margin-bottom: 15%;
+    margin-right: 5%;
 }
 .logo{
     margin-right: 15px;
