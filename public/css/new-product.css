@@ -1,14 +1,13 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
+
 body{
     font-family: 'Exo', sans-serif;
 }
 
 form h2{
-    font-size: 20px;
     text-align: left;
     color: #46494c;
     
@@ -16,9 +15,55 @@ form h2{
 .new-product-form{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    color: #46494c;
-    padding-bottom: 5%;
+    background: #fff;
+    position: center;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    min-height: 100%;
+    padding: 20px;
+}
+
+    input[type=button], input[type=submit], input[type=reset]  {
+        background-color: #1985a1;
+        border: none;
+        color: white;
+        padding: 15px 80px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 13px;
+        -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+        box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+        margin: 5px 20px 40px 20px;
+
+        
+      
+      }
+      
+      input[type=button] {
+        background-color: #1985a1;
+      }
+      
+      input[type=text] {
+        background-color: #f6f6f6;
+        border: none;
+        color: #0d0d0d;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px;
+        width: 85%;
+        border: 2px solid #f6f6f6;
 }
 div .form{
     font-family: 'Exo', sans-serif;
@@ -26,28 +71,27 @@ div .form{
     padding: 1%;
     padding-left: 2px;
     font-weight: 700;
+    width: 50%;
+    margin-bottom: 15px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    justify-content: center;
+    
 }
 div .form label{
     font-size: 18px;
+    justify-content: center;
 }
 .color-checkbox label{
     padding: 5px;
     font-size: 14px;
 }
-button {
-    color: white;
-    font-size: 16px;
-    width: 170px;
-    height: 50px;
-    background-color: #1985a1;
-    border-radius: 5px;
-    margin-bottom: 15%;
-    margin-right: 5%;
-}
+
 
 main{
     max-width: 100%;
-    width: 90%; 
+    width: 100%; 
+    justify-content: center;
 }
 
 
@@ -60,4 +104,14 @@ footer{
     flex-wrap: wrap;
     justify-content: space-between;
     width: 10%;
+}
+
+.caja{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 30px;
+    width: fit-content;
+    justify-content: center;
+
 }

@@ -8,21 +8,21 @@
 <body>
     <%- include('./partials/header')%>
     <main>
-        <form action="/new-product" class='' method="POST">
+        <form action="/new-product" class='caja' method="POST">
             <div class="new-product-form">
                 <h2>Creá tu producto</h2>
-                <div class="form">
+                <div>
                     <label for="titulo">Título de producto:</label>
                     <input type="text" class="" name="titulo-producto" required>
                 </div>
-                <div class="form">
+                <div>
                     <textarea name="descripcion" id="descripcion" cols="30" rows="5" placeholder="Descripción"></textarea>
                 </div>
-                <div class="form">
+                <div>
                     <label>Imagen de producto</label>
                     <input type="file" name="product-image" id="product-image" accept="jpg" multiple>
                 </div>
-                <div class="form">
+                <div>
                     <label>Categoría</label>
                     <select name="categoria" id="">
                         <option value="" disabled selected>Seleccione una</option>
@@ -34,7 +34,7 @@
                         <option value="">Taller</option>
                     </select>
                 </div>
-                <div class="form">
+                <div>
                    <label>Color:</label>
                    <div class="color-checkbox">
                     <label for="colores">Blanco<input type="checkbox" name="colores" value="Blanco"></label>
@@ -46,7 +46,7 @@
                    </div>
                     
                 </div>
-                <div class="form">
+                <div class=>
                     <label for="precio">Precio: </label>
                     <input type="text" name="precio" id="precio" required>
                 </div>
