@@ -11,12 +11,14 @@
         <form action="/new-product" class='caja' method="POST">
             <div class="new-product-form">
                 <h2>Creá tu producto</h2>
+                <form>
                 <div>
-                    <label for="titulo">Título de producto:</label>
-                    <input type="text" class="" name="titulo-producto" required>
+                    <label>Título del producto</label>
+                    <input type="text"  name="titulo" placeholder="Producto" required>
                 </div>
                 <div>
-                    <textarea name="descripcion" id="descripcion" cols="30" rows="5" placeholder="Descripción"></textarea>
+                    <label for="descripcion"> Descripcion</label>
+                    <textarea name="descripcion" id="descripcion" cols="30" placeholder="Describe el producto"></textarea>
                 </div>
                 <div>
                     <label>Imagen de producto</label>
@@ -35,26 +37,26 @@
                     </select>
                 </div>
                 <div>
-                   <label>Color:</label>
-                   <div class="color-checkbox">
+                <label>Color:</label>
+                <div class="color-checkbox">
                     <label for="colores">Blanco<input type="checkbox" name="colores" value="Blanco"></label>
                     <label for="colores">Negro<input type="checkbox" name="colores" value="Negro"></label>
                     <label for="colores">Rojo<input type="checkbox" name="colores" value="Rojo"></label>
                     <label for="colores">Azúl<input type="checkbox" name="colores" value="Azúl"></label>
                     <label for="colores">Naranja<input type="checkbox" name="colores" value="Naranja"></label>
                     <label for="colores">Verde<input type="checkbox" name="colores" value="Verde"></label>
-                   </div>
+                </div>
                     
                 </div>
-                <div class=>
+                <div>
                     <label for="precio">Precio: </label>
-                    <input type="text" name="precio" id="precio" required>
+                    <input type="text"  name="precio" placeholder="Precio" required>
                 </div>
                 
 
             </div>
-            <button type="submit">Crear</button>
-            <button type="reset">Borrar</button>
+            <button id=boton type="submit">Crear</button>
+            <button id=boton type="reset">Borrar</button>
             
         </form>
     </main>
