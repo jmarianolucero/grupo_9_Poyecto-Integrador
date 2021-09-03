@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const productController = require("../controllers/productsController");
+const productsController = require("../controllers/productsController");
 
 /*** GET ALL PRODUCTS ***/ 
 router.get('/products', productsController.index); 
