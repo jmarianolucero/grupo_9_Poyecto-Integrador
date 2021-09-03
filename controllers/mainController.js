@@ -5,8 +5,8 @@ const controller = {
     "login":(req,res)=>{
         res.render("login")
     },
-    "product":(req,res)=>{
-        res.render("product")
+    "detail":(req,res)=>{
+        res.render("detail")
     },
     "register":(req,res)=>{
         res.render("register")},
