@@ -8,7 +8,7 @@
 <body>
     <%- include('./partials/header')%>
     <main>
-        <form action="/new-product" class='caja' method="POST">
+        <form action="/products" class='caja' method="POST" enctype="multipart/form-data">
             <div class="new-product-form">
                 <h2>Creá tu producto</h2>
                 <form>
@@ -22,7 +22,7 @@
                 </div>
                 <div>
                     <label>Imagen de producto</label>
-                    <input type="file" name="product-image" id="product-image" accept="jpg" multiple>
+                    <input type="file" name="product-image" id="product-image" accept="jpg, png" multiple>
                 </div>
                 <div>
                     <label>Categoría</label>
