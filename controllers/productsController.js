@@ -7,7 +7,7 @@ const controller = {
 	// Root - Show all products
 	index: (req, res) => {
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		res.render('products', {productos : products}) 
+		res.render('products', {products : products}) 
 	},
 
 	// Detail - Detail from one product
@@ -72,7 +72,12 @@ const controller = {
 	destroy : (req, res) => {
 		let idProduct = req.params.id;
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		let updatedProducts = products.filter(n => n.id != idProduct);
+		products.forEach(product => {
+			if (product.id == idParams){
+				product.activity = "disable"
+
+			};
+		})
 		fs.writeFileSync('productsFilePath', JSON.stringify(products));
 		res.redirect('/products')
 

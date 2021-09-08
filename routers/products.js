@@ -24,14 +24,14 @@ router.post('/', fileUpload.any('product-image'), productsController.store);
 
 
 /*** GET ONE PRODUCT ***/ 
-router.get('/products/:id', productsController.detail); 
+router.get('/:id', productsController.detail); 
 
 /*** EDIT ONE PRODUCT ***/ 
-router.get('/products/:id/edit', productsController.edit); 
-router.put('/products/:id', productsController.update); 
+router.get('/:id/edit', productsController.edit); 
+router.put('/:id', productsController.update); 
 
 
 /*** DELETE ONE PRODUCT ***/ 
-router.delete('/products/:id', productsController.destroy); 
+router.delete('/:id', productsController.destroy); 
 
 module.exports = router;
