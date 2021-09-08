@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('./partials/head')%>
-    <title>Guitarra Electrica Fender Stratocaster Standar Mexico Rsw Sb</title>
+    <title><%= product.name %></title>
     <link rel="stylesheet" href="/css/product.css">
 </head>
 <body>
@@ -11,10 +11,10 @@
         <section>
             <div class="product">
                 <div class="product-image">
-                    <img src="/images/Guitarra Eléctrica Music Box.png" alt="Guitarra Eléctrica">
+                    <img src="/images/<%= product.image %>" alt="<%= product.name %>">
                 </div>
                 <article class="main-description">
-                    <h2>Guitarra Electrica Fender Stratocaster Standar Mexico Rsw Sb</h2> 
+                    <h2><%= product.name %></h2> 
                     <p class="puntaje">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -35,45 +35,23 @@
                     </div>
                     <div class="price-select">
                         <p class="price">
-                            Precio: $185.683
+                            <%= product.price %>
                         </p>
-                        <form action="#" method="GET" class="select-color">
-                            <select name="color">
-                                <option value="" disabled selected>Seleccioná tu color</option>
-                                <option value="#fa383e">Rojo</option>
-                                <option value="#efefef">Blanco</option>
-                                <option value="#345995">Azúl</option>
-                                <option value="#34d1bf">Celeste</option>
-                                <option value="#070707">Negro</option> 
-                            </select>
-                        </form>
                     </div>
                     <div class="div-line">
 
                     </div>
-                    <h3>Descripción:</h3>
-                    <div class="product-description">
-                            
-                        <ul class="description">
-                            <li>Forma de cuerpo: ST-Style</li>
-                            <li>Fabricada en México</li>
-                            <li>Cuerpo de aliso</li>
-                            <li>Mástil de Rosewood (Modern C-Shape)</li>
-                            <li>Acabado brillante</li>
-                            <li>Medida: 648mm</li>
-                            <li>Diapasón de Rosewood</li>
-                            <li>21 trastes medium</li>
-                           <li>Ancho de cejuela: 42,0 mm</li>
-                            <li>3x Standard Single Coil</li>
-                            <li>Conmutador de 5 vías</li>
-                            <li>Vintage-Style Synchronized Tremolo</li>
-                            <li>Golpeador de 3 capas pergamino</li>
-                        </ul>
-                        <div class="add-cart">
-                            <form action="/carrito" method="GET">
-                                <button type="submit">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
-                            </form>
-                        </div>
+                    <h3><%= product.description %></h3>
+                    <div class="add-cart">
+                        <form action="/carrito" method="GET">
+                            <button type="submit">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
+                        </form>
+                        <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" style="display: inline-flex">
+                            <button type="submit" class="action-button edit">EDITAR PRODUCTO</button>
+                        </form>
+						<form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+							<button type="submit" class="action-button delete">ELIMINAR</button>
+						</form>
                     </div>
                     <div class="div-line"></div>
                 </article>

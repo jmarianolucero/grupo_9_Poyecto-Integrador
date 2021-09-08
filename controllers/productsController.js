@@ -15,7 +15,7 @@ const controller = {
 		idParams = req.params.id
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		let productoAMostrar = products.find(n => n.id == idParams);
-		res.render('detail', {detalleProducto : productoAMostrar})
+		res.render('detail', {product : productoAMostrar})
 	},
 
 	// Create - Form to create
@@ -73,12 +73,13 @@ const controller = {
 		let idProduct = req.params.id;
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		products.forEach(product => {
-			if (product.id == idParams){
+			if (product.id == idProduct){
 				product.activity = "disable"
 
 			};
 		})
 		fs.writeFileSync('productsFilePath', JSON.stringify(products));
+		
 		res.redirect('/products')
 
 	}
