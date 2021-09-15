@@ -32,8 +32,6 @@ router.put('/:id', productsController.update);
 
 
 /*** DELETE ONE PRODUCT ***/ 
-router.delete('/:id', (req,res)=>{
-    res.send("soy un delete")
-}); 
+router.delete('/:id', productsController.destroy); 
 
 module.exports = router;
