@@ -6,7 +6,8 @@ const productsFilePath = path.join(__dirname, '../data/products.json');
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		let allProducts = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		let products = allProducts.filter(i=>i.status =="able")
 		res.render('products', {products : products}) 
 	},
 
@@ -74,11 +75,11 @@ const controller = {
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		products.forEach(product => {
 			if (product.id == idProduct){
-				product.activity = "disable"
-
+				product.status = "disable"
+				
 			};
 		})
-		fs.writeFileSync('productsFilePath', JSON.stringify(products));
+		fs.writeFileSync(productsFilePath, JSON.stringify(products));
 		
 		res.redirect('/products')
 
