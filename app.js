@@ -8,10 +8,9 @@ app.set("view engine", "ejs");
 
 
 app.listen(process.env.PORT || 3000,()=>{console.log("server iniciado")});
-app.use("/",routesMain);
-app.use("/products",routesProduct);
 app.use(methodOverride('_method')); 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-
+app.use("/",routesMain);
+app.use("/products",routesProduct);
