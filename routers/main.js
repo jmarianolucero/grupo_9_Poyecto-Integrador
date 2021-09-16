@@ -6,6 +6,6 @@ router.get("/",mainController.home);
 router.get("/register",mainController.register);
 router.get('/shopping-cart',mainController.cart);
 router.get('/login', mainController.login);
-router.get('/new-product', mainController.newProduct);
+
 
 module.exports = router;

@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Exo', sans-serif;
+    color: #46494c;
+}
+
+main{
+    max-width: 100%;
+    width: 90%; 
+}
+.productos h3{
+    font-size: 35px;
+    padding-bottom: 3%;
+}
+.listaDeProductos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.listaDeProductos a{
+    text-decoration: none;
+}
+
+.product-image{
+    margin-right: 10%;
+    
+}
+.description{
+    margin-top: 10px;
+    margin-bottom: 35px;
+    color: #46494c;
+    margin-left: 15px;
+}
+.price{
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.div-line{
+    margin: 15px;
+    border-bottom: 2px solid #c5c3c6;
+    left: 0%;
+}
+
+
+
+

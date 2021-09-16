@@ -3,7 +3,7 @@
 <head>
     <%- include('./partials/head')%>
     <title>Todos nuestros productos</title>
-    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/product-list.css">
 </head>
 <body>
     <%- include('./partials/header')%>
@@ -21,6 +21,7 @@
                                 <p class="category"><%= products[i].category %></p>
                                 <p class="price"><%= products[i].price %></p>
                                 <h4 class="description"><%= products[i].description %></h4>
+                                <div class="div-line"></div>
                             </div>
                         </article>
                     </a>

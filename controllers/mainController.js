@@ -9,7 +9,7 @@ const controller = {
     "register":(req,res)=>{
         res.render("register")},
     "cart":(req,res)=>{res.render("shopping-cart")
-    },
+    }
 }
 
 module.exports = controller
