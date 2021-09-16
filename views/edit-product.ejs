@@ -41,7 +41,7 @@
                     <% let colorOptions = ['Sin seleccionar','Blanco', 'Negro', 'Rojo', 'Azul', 'Naranja', 'Verde'] %>
                     <% for ( i = 0 ; i < colorOptions.length ; i++) { %>
                         <% let isSelected = (productToEdit[0].color == colorOptions[i]) ? 'selected' : ''; %>
-                        <option value="<%= sizeOptions[i] %>" <%= isSelected %>> <%= colorOptions[i] %> </option>
+                        <option value="<%= colorOptions[i] %>" <%= isSelected %>> <%= colorOptions[i] %> </option>
                     <% } %>
                    </select>      
                 </div>
