@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <%- include('./partials/head')%>
+    <title>Crear producto</title>
+    <link rel="stylesheet" href="/css/new-product.css">
+</head>
+<body>
+    <%- include('./partials/header')%>
+    <main>
+        <form action="/products" class='caja' method="POST" enctype="multipart/form-data">
+            <div class="edit-product-form">
+
+             <h3>Modificar el Producto</h3>
+             <form class="caja" action="/products/<%= productToEdit[0].id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                 <div>
+                  <label>Nombre del Producto</label>
+                   <input type="text" id="name" name="name" placeholder="Nombre de producto"  value='<%= productToEdit[0].name %>'>     
+                 </div>
+                 <div>
+                   <label>Descripción</label>
+                    <textarea id="descripcion" name="description" placeholder="Descripcion"  value='<%= productToEdit[0].description %>'> </textarea>
+                 </div>
+                 <div>
+                   <label>Imagen</label>
+                    <input type="file" name="image" placeholder="Imagen" id="product-image" accept="jpg, png" multiple>   
+                 </div>
+                 <div>
+                   <label>Categoría</label>
+                    <select id="" name="category">
+                    <% let categoryOptions = ['Sin seleccionar','Cuerdas', 'Percusión', 'Viento', 'Sonido', 'Taller'] %>
+                    <% for ( i = 0 ; i < categoryOptions.length ; i++) { %>
+                        <% let isSelected = (productToEdit[0].category == categoryOptions[i]) ? 'selected' : ''; %>
+                        <option value="<%= categoryOptions[i] %>" <%= isSelected %>> <%= categoryOptions[i] %> </option>
+                    <% } %>
+                   </select>   
+                </div>
+                <div>
+                  <label>Color</label>              
+                   <select id="" name="color">
+                    <% let colorOptions = ['Sin seleccionar','Blanco', 'Negro', 'Rojo', 'Azul', 'Naranja', 'Verde'] %>
+                    <% for ( i = 0 ; i < colorOptions.length ; i++) { %>
+                        <% let isSelected = (productToEdit[0].color == colorOptions[i]) ? 'selected' : ''; %>
+                        <option value="<%= sizeOptions[i] %>" <%= isSelected %>> <%= colorOptions[i] %> </option>
+                    <% } %>
+                   </select>      
+                </div>
+                <div>
+                  <label>Precio</label>
+                   <input type="text" name="price" placeholder="Precio" id="precio" value='<%= productToEdit[0].price %>'>    
+                </div>
+                <div>
+                  <button id="boton" type="submit" name="edit">Guardar Cambios</button>
+                </div>
+
+            </div>
+            
+        </form>
+    </main>
+    <%- include('./partials/footer')%>
+    
+</body>
+</html>
