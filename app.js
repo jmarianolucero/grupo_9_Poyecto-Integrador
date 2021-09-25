@@ -3,6 +3,7 @@ const app = express();
 const methodOverride =  require('method-override'); // Métodos PUT y DELETE
 const routesMain = require("./routers/main")
 const routesProduct = require('./routers/products')
+const routesUser = require('./routers/users')
 app.use(express.static('public'));
 app.set("view engine", "ejs");
 
@@ -14,3 +15,4 @@ app.use(express.json());
 
 app.use("/",routesMain);
 app.use("/products",routesProduct);
+app.use("/users",routesUser);
