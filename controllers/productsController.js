@@ -27,6 +27,7 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		console.log(req.file)
 		let newProduct = {
 			id: Date.now(),
 			name: req.body.name,
