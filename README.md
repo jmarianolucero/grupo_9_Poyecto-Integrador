@@ -23,4 +23,11 @@ Referentes:
 - https://tiendamia.com.ar/
 
 Tablero TRELLO: 
-https://trello.com/b/sVRz2Cf2/proyecto-dh
+https://trello.com/b/sVRz2Cf2/proyecto-dh 
+
+Sprints Entregados: 
+
+- Sprint 1
+- Sprint 2
+- Sprint 3
+- Sprint 4
