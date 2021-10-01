@@ -30,11 +30,11 @@ const controller = {
 		console.log(req.file)
 		let newProduct = {
 			id: Date.now(),
-			name: req.body.name,
-			price: req.body.price,
+			name: req.body.titulo,
+			price: req.body.precio,
 			discount: req.body.discount,
-			category: req.body.category,
-			description: req.body.description,
+			category: req.body.categoria,
+			description: req.body.descripcion,
 			image: req.file.filename,
 		};
 		

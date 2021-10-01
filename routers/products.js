@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
     callback(null, imageName);
     }
     });
-    const fileUpload = multer({storage})
+    const fileUpload = multer({storage:storage})
 
 
 /*** GET ALL PRODUCTS ***/ 
@@ -21,7 +21,7 @@ router.get('/', productsController.index);
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', productsController.create); 
-router.post('/', fileUpload.any('product-image'), productsController.store); 
+router.post('/', fileUpload.single('product-image'), productsController.store); 
 
 
 /*** GET ONE PRODUCT ***/ 
