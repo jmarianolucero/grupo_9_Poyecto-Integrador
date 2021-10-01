@@ -11,8 +11,9 @@
         <section>
             <section class="productos">
                 <h3>Nuestos Productos</h3>
+                <% products.forEach(product => { %>
                 <div class="listaDeProductos">
-                    <% products.forEach(product => { %>
+                    
                     <a href="/products/<%= product.id %>">
                         <article>
                             <img src="/images/products/<%= product.image %>" alt="imagen de <%= product.name %>" class="">
@@ -25,9 +26,9 @@
                             </div>
                         </article>
                     </a>
-                    <% }) %>
+                    
                 </div>
-
+                <% }) %>
 
 
             </section>

@@ -35,7 +35,7 @@ const controller = {
 			price: req.body.precio,
 			image: req.file.filename,
 			category: req.body.categoria,
-			status: req.body.status
+			status: 'able'
 			
 			
 		};

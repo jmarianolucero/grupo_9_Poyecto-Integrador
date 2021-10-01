@@ -88,5 +88,14 @@
   "image": "clarinete-yamaha.png",
   "category": null,
   "status": "able"
+ },
+ {
+  "id": 1633127942104,
+  "name": "Guitarra Criolla",
+  "description": "Guitarra Criolla simple",
+  "price": "15500",
+  "image": "1633127942089.png",
+  "category": "cuerdas",
+  "status": "able"
  }
 ]
