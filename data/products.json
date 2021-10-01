@@ -88,21 +88,5 @@
   "image": "clarinete-yamaha.png",
   "category": null,
   "status": "able"
- },
- {
-  "id": 1633120424471,
-  "name": "Guitarra Criolla",
-  "price": "15500",
-  "category": "cuerdas",
-  "description": "ergfrg",
-  "image": "1633120424457.png"
- },
- {
-  "id": 1633120617026,
-  "name": "Guitarra Criolla",
-  "price": "15500",
-  "category": "cuerdas",
-  "description": "ewtgetbrt",
-  "image": "1633120617011.png"
  }
 ]

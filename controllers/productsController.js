@@ -31,11 +31,13 @@ const controller = {
 		let newProduct = {
 			id: Date.now(),
 			name: req.body.titulo,
-			price: req.body.precio,
-			discount: req.body.discount,
-			category: req.body.categoria,
 			description: req.body.descripcion,
+			price: req.body.precio,
 			image: req.file.filename,
+			category: req.body.categoria,
+			status: req.body.status
+			
+			
 		};
 		
 		products.push(newProduct);
