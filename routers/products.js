@@ -29,7 +29,7 @@ router.get('/:id', productsController.detail);
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/:id/edit', productsController.edit); 
-router.put('/:id', fileUpload.any("product-image"), productsController.update); 
+router.put('/:id', fileUpload.single("product-image"), productsController.update); 
 
 
 /*** DELETE ONE PRODUCT ***/ 
