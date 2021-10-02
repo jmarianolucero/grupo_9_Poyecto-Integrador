@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('./partials/head')%>
-    <title><%= product.name %></title>
+    <title><%= products.name %></title>
     <link rel="stylesheet" href="/css/product-detail.css">
 </head>
 <body>
@@ -11,10 +11,10 @@
         <section>
             <div class="product">
                 <div class="product-image">
-                    <img src="/images/<%= product.image %>" alt="<%= product.name %>">
+                    <img src="/images/products/<%= products.image %>" alt="<%= products.name %>">
                 </div>
                 <article class="main-description">
-                    <h2><%= product.name %></h2> 
+                    <h2><%= products.name %></h2> 
                     <p class="puntaje">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -35,21 +35,21 @@
                     </div>
                     <div class="price-select">
                         <p class="price">
-                            <%= product.price %>
+                            <%= products.price %>
                         </p>
                     </div>
                     <div class="div-line">
 
                     </div>
-                    <h3><%= product.description %></h3>
+                    <h3><%= products.description %></h3>
                     <div class="add-cart">
                         <form action="/carrito" method="GET">
                             <button type="submit">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
                         </form>
-                        <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" style="display: inline-flex">
+                        <form action="/products/edit/<%= products.id %>?_method=PUT" method="POST" style="display: inline-flex">
                             <button type="submit" class="action-button edit">EDITAR PRODUCTO</button>
                         </form>
-						<form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+						<form action="/products/<%= products.id %>?_method=DELETE" method="POST" style="display: inline-flex">
 							<button type="submit" class="action-button delete">ELIMINAR</button>
 						</form>
                     </div>

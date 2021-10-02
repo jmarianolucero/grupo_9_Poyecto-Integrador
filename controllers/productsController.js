@@ -16,7 +16,7 @@ const controller = {
 		idParams = req.params.id
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		let productoAMostrar = products.find(n => n.id == idParams);
-		res.render('detail', {product : productoAMostrar})
+		res.render('detail', {products : productoAMostrar})
 	},
 
 	// Create - Form to create
