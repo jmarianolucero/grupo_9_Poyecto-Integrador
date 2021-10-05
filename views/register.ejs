@@ -8,7 +8,7 @@
     <body>
         <%- include('./partials/header')%>
         <main>
-            <form action="/register" class="caja" method="POST">
+            <form action="/users/" class="caja" method="POST">
                
                 <div class="formulario"> 
                     <h1>Formulario de registro</h1>
@@ -31,6 +31,10 @@
                     </div>
                     <div class="form">
                         <input class="barra" type="password" name="repass" id="repass" placeholder="Repetir Contraseña" required>
+                    </div>
+
+                    <div class="form">
+                        <input class="barra" type="file" name="user-image" id="user-image" placeholder="Subir una imagen" accept=".jpg, .png" single>
                     </div>
                     
                     <div class="terminos, hl">
