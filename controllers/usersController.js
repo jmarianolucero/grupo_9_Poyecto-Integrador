@@ -12,7 +12,7 @@ const controller = {
     register:(req,res)=>{
         res.render("register")
     },
-    new: (req, res) => {
+    newUser: (req, res) => {
         let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 		console.log(req.file)
 		let newUser = {

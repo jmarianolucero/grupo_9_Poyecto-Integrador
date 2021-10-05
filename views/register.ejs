@@ -8,7 +8,7 @@
     <body>
         <%- include('./partials/header')%>
         <main>
-            <form action="/users/" class="caja" method="POST">
+            <form action="/users/" class="caja" method="POST" enctype="multipart/form-data">
                
                 <div class="formulario"> 
                     <h1>Formulario de registro</h1>
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="form">
-                        <input class="barra" type="file" name="user-image" id="user-image" placeholder="Subir una imagen" accept=".jpg, .png" single>
+                        <input class="barra" type="file" name="user-image" id="user-image" accept=".jpg, .png">
                     </div>
                     
                     <div class="terminos, hl">
