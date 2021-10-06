@@ -22,7 +22,11 @@ const controller = {
                 oldData: req.body
             });
         }
-        //User.create(req.body)
+        /*let userToCreate={
+            ...req.body,
+            image:req.file.filename
+        }
+        User.create(userToCreate)*/
 
         let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 		console.log(req.file)
