@@ -58,6 +58,9 @@ main{
     
     
 }
+div .text-danger{
+    color: red;
+}
 
 .terminos{
     width: 100%;

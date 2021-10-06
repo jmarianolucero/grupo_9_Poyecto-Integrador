@@ -15,18 +15,43 @@
                     
                     <div class="form">
                         <input class="barra" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                        <% if (locals.errors && errors.nombre) { %>
+                            <div class="text-danger">
+                                <%= errors.nombre.msg %> 
+                            </div>
+                        <% } %>
                     </div>
                     <div class="form">
                         <input class="barra" type="text" name="nick" id="nick" placeholder="Nombre de usuario" required>
+                        <% if (locals.errors && errors.nick) { %>
+                            <div class="text-danger">
+                                <%= errors.nick.msg %> 
+                            </div>
+                        <% } %>
                     </div>
                     <div class="form">
                         <input class="barra" type="tel" name="dni" id="dni" placeholder="DNI" required>
+                        <% if (locals.errors && errors.dni) { %>
+                            <div class="text-danger">
+                                <%= errors.dni.msg %> 
+                            </div>
+                        <% } %>
                     </div>  
                     <div class="form">
                         <input class="barra" type="password" name="pass" id="pass" placeholder="Contraseña" required>
+                        <% if (locals.errors && errors.pass) { %>
+                            <div class="text-danger">
+                                <%= errors.pass.msg %> 
+                            </div>
+                        <% } %>
                     </div>
                     <div class="form">
                         <input class="barra" type="email" name="email" id="email" placeholder="Email" required>
+                        <% if (locals.errors && erros.email) { %>
+                            <div class="text-danger">
+                                <%= errors.email.msg %> 
+                            </div>
+                        <% } %>
                         
                     </div>
                     <div class="form">

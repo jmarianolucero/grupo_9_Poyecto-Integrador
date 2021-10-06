@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/users.json');
+const { validationResult } = require('express-validator');
 
 const controller = {
     userhome: (req, res)=>{
@@ -13,6 +14,12 @@ const controller = {
         res.render("register")
     },
     newUser: (req, res) => {
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render('register', {
+                errors: resultValidation.mapped
+            });
+        }
         let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 		console.log(req.file)
 		let newUser = {
