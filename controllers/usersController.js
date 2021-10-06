@@ -3,6 +3,7 @@ const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const { validationResult } = require('express-validator');
 const User = require("../models/Users");
+const bcryptjs = require ("bcryptjs");
 
 const controller = {
     userhome: (req, res)=>{
@@ -22,11 +23,27 @@ const controller = {
                 oldData: req.body
             });
         }
-        /*let userToCreate={
+        /*
+        let userInDB = User.findByField("email", req.body.email);
+        
+        if (userInDB){
+            return res.render('register', {
+                errors: {
+                    email:{
+                        msg:"Este email ya esta registrado"
+                    }
+                },
+                oldData: req.body
+            });
+        }
+        
+        let userToCreate={
             ...req.body,
+            password:bcryptjs.hashSync(req.body.password,10),
             image:req.file.filename
         }
-        User.create(userToCreate)*/
+        User.create(userToCreate)
+        */
 
         let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 		console.log(req.file)
