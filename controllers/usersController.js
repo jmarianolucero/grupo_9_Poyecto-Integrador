@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const { validationResult } = require('express-validator');
+const User = require("../models/Users");
 
 const controller = {
     userhome: (req, res)=>{
@@ -21,6 +22,8 @@ const controller = {
                 oldData: req.body
             });
         }
+        //User.create(req.body)
+
         let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 		console.log(req.file)
 		let newUser = {
