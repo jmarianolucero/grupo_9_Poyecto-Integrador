@@ -14,7 +14,7 @@
                     <h1>Formulario de registro</h1>
                     
                     <div class="form">
-                        <input class="barra" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                        <input class="barra" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%= locals.oldData ? oldData.nombre : null %>" >
                         <% if (locals.errors && errors.nombre) { %>
                             <div class="text-danger">
                                 <%= errors.nombre.msg %> 
@@ -22,7 +22,7 @@
                         <% } %>
                     </div>
                     <div class="form">
-                        <input class="barra" type="text" name="nick" id="nick" placeholder="Nombre de usuario" required>
+                        <input class="barra" type="text" name="nick" id="nick" placeholder="Nombre de usuario" value="<%= locals.oldData ? oldData.nick : null %>">
                         <% if (locals.errors && errors.nick) { %>
                             <div class="text-danger">
                                 <%= errors.nick.msg %> 
@@ -30,7 +30,7 @@
                         <% } %>
                     </div>
                     <div class="form">
-                        <input class="barra" type="tel" name="dni" id="dni" placeholder="DNI" required>
+                        <input class="barra" type="tel" name="dni" id="dni" placeholder="DNI" value="<%= locals.oldData ? oldData.dni : null %>">
                         <% if (locals.errors && errors.dni) { %>
                             <div class="text-danger">
                                 <%= errors.dni.msg %> 
@@ -38,7 +38,7 @@
                         <% } %>
                     </div>  
                     <div class="form">
-                        <input class="barra" type="password" name="pass" id="pass" placeholder="Contraseña" required>
+                        <input class="barra" type="password" name="pass" id="pass" placeholder="Contraseña">
                         <% if (locals.errors && errors.pass) { %>
                             <div class="text-danger">
                                 <%= errors.pass.msg %> 
@@ -46,8 +46,8 @@
                         <% } %>
                     </div>
                     <div class="form">
-                        <input class="barra" type="email" name="email" id="email" placeholder="Email" required>
-                        <% if (locals.errors && erros.email) { %>
+                        <input class="barra" type="email" name="email" id="email" placeholder="Email" value="<%= locals.oldData ? oldData.email : null %>">
+                        <% if (locals.errors && errors.email) { %>
                             <div class="text-danger">
                                 <%= errors.email.msg %> 
                             </div>
@@ -55,11 +55,21 @@
                         
                     </div>
                     <div class="form">
-                        <input class="barra" type="password" name="repass" id="repass" placeholder="Repetir Contraseña" required>
+                        <input class="barra" type="password" name="repass" id="repass" placeholder="Repetir Contraseña">
+                        <% if (locals.errors && errors.repass) { %>
+                            <div class="text-danger">
+                                <%= errors.repass.msg %> 
+                            </div>
+                        <% } %>
                     </div>
 
                     <div class="form">
-                        <input class="barra" type="file" name="user-image" id="user-image" accept=".jpg, .png">
+                        <input class="barra" type="file" name="userImage" id="user-image" accept=".jpg, .png">
+                        <% if (locals.errors && errors.userImage) { %>
+                            <div class="text-danger">
+                                <%= errors.userImage.msg %> 
+                            </div>
+                        <% } %>
                     </div>
                     
                     <div class="terminos, hl">

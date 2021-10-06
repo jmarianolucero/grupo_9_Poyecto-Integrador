@@ -17,7 +17,8 @@ const controller = {
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             return res.render('register', {
-                errors: resultValidation.mapped
+                errors: resultValidation.mapped(),
+                oldData: req.body
             });
         }
         let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
