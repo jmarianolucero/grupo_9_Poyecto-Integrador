@@ -12,7 +12,7 @@ const controller = {
     login:(req,res)=>{
         res.render("login")
     },
-    /*loginProcess:(req,res)=>{
+    loginProcess:(req,res)=>{
 
         let userToLogin = User.findByField("email",req.body.email);
         if(userToLogin){ 
@@ -39,7 +39,7 @@ const controller = {
                     }
                 });
 
-    },*/
+    },
 
     profile:(req,res)=>{
         return res.render("user",{

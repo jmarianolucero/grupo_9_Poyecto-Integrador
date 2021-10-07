@@ -61,4 +61,4 @@ const User ={
 }
 
 module.exports = User
-console.log (user.delete(33));
+//console.log (user.delete(33));
