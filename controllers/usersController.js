@@ -12,6 +12,30 @@ const controller = {
     login:(req,res)=>{
         res.render("login")
     },
+    loginProcess:(req,res)=>{
+
+        let userToLogin = User.findByField("email",req.body.email);
+        if(userToLogin){ 
+            let isOkPassword =bcryptjs.compareSync(req.body.password, userToLogin.password);
+            if(isOkPassword){
+                res.send("contraseña valida")
+            }
+            return res.render("login",{
+                errors:{
+                    email:{
+                msg:"credenciales invalidas"
+                    }
+                }
+            });
+        } 
+        return res.render("login",{
+                    errors:{
+                        email:{
+                    msg:"no se encuentra el email"
+                        }
+                    }
+                });
+    },
     register:(req,res)=>{
         res.render("register")
     },

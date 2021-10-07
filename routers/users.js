@@ -47,6 +47,9 @@ router.get('/', usersController.userhome);
 //Home de login
 router.get('/login', usersController.login);
 
+//Proceso de login
+router.post('/login', usersController.loginProcess);
+
 //Home de register
 router.get("/register", usersController.register);
 
