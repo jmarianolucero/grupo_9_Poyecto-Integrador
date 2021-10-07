@@ -12,13 +12,16 @@ const controller = {
     login:(req,res)=>{
         res.render("login")
     },
-    loginProcess:(req,res)=>{
+    /*loginProcess:(req,res)=>{
 
         let userToLogin = User.findByField("email",req.body.email);
         if(userToLogin){ 
+            delete userToLogin.password;
+            req.session.userLoged = userToLogin;
             let isOkPassword =bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(isOkPassword){
                 res.send("contraseña valida")
+                //si funciona cambiar por res.redirect("/user")
             }
             return res.render("login",{
                 errors:{
@@ -35,7 +38,15 @@ const controller = {
                         }
                     }
                 });
+
+    },*/
+
+    profile:(req,res)=>{
+        return res.render("user",{
+            user:req.session.userLoged
+        })
     },
+
     register:(req,res)=>{
         res.render("register")
     },

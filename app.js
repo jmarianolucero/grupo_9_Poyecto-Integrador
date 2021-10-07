@@ -4,6 +4,18 @@ const methodOverride =  require('method-override'); // Métodos PUT y DELETE
 const routesMain = require("./routers/main")
 const routesProduct = require('./routers/products')
 const routesUser = require('./routers/users')
+/* aqui va el session
+
+const session = require("express-session");
+
+
+app.use(session({
+    secret:"its a secret",
+    resave:false,
+    saveUninitialized:false
+}));
+
+*/ 
 app.use(express.static('public'));
 app.set("view engine", "ejs");
 
