@@ -56,4 +56,7 @@ router.get("/register", usersController.register);
 //Procesar register
 router.post("/",fileUpload.single('userImage'), validations, usersController.newUser);
 
+//Home de user
+router.get("/user", usersController.profile);
+
 module.exports = router;
