@@ -6,7 +6,7 @@
 const fs=require("fs")
 
 const User ={
-    fileName:"../data/users.json",
+    fileName:"./data/users.json",
 
     generateId:function(){
         let allUsers = this.findAll();
@@ -61,4 +61,4 @@ const User ={
 }
 
 module.exports = User
-console.log (user.delete(33));
+

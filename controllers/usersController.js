@@ -12,7 +12,7 @@ const controller = {
     login:(req,res)=>{
         res.render("login")
     },
-    /*loginProcess:(req,res)=>{
+    loginProcess:(req,res)=>{
 
         let userToLogin = User.findByField("email",req.body.email);
         if(userToLogin){ 
@@ -39,7 +39,7 @@ const controller = {
                     }
                 });
 
-    },*/
+    },
 
     profile:(req,res)=>{
         return res.render("user",{
@@ -58,7 +58,7 @@ const controller = {
                 oldData: req.body
             });
         }
-        /*
+        
         let userInDB = User.findByField("email", req.body.email);
         
         if (userInDB){
@@ -74,13 +74,15 @@ const controller = {
         
         let userToCreate={
             ...req.body,
-            password:bcryptjs.hashSync(req.body.password,10),
+            pass:bcryptjs.hashSync(req.body.pass,10),
             image:req.file.filename
         }
+        delete userToCreate.repass
+        delete userToCreate.terminos
         User.create(userToCreate)
-        */
+        
 
-        let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        /*let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 		console.log(req.file)
 		let newUser = {
 			id: Date.now(),
@@ -93,9 +95,9 @@ const controller = {
 				
 		};
         users.push(newUser);
-		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));*/
 
-		res.redirect('/users')
+		res.redirect('/users/login')
     }
 };
 

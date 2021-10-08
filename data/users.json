@@ -285,5 +285,15 @@
   "password": "123456",
   "email": "jperez@gmail.com",
   "image": "1633471696624.png"
+ },
+ {
+  "id": 33,
+  "nombre": "andy",
+  "nick": "primus",
+  "dni": "12345",
+  "pass": "$2a$10$uUdQ9hM.8pJdjlmmvKLjGOjcb5AYplrxyMSi9wFYCtGOKBAAXu1wi",
+  "email": "andy@gmail.com",
+  "terminos": "on",
+  "image": "1633654622220.png"
  }
 ]
