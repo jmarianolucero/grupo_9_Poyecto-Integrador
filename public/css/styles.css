@@ -3,6 +3,10 @@
     padding: 0%;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Exo', sans-serif;
+}
+
 
 main{
     width: 100%;

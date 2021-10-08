@@ -10,7 +10,7 @@
         <%- include('./partials/header')%>
         <main>
          
-            <form action="/" class="caja" method="GET">
+            <form action="/users/" class="caja" method="POST">
                 <div class="formulario"> 
                     <div id="formContent">
                       <h2 class="active"> Inicia sesión </h2>
@@ -21,7 +21,7 @@
                       </div>
         
                       <form>
-                        <input type="text" id="login"  name="login" placeholder="Inicia Sesión">
+                        <input type="text" id="login"  name="login" placeholder="Correo Electrónico">
                         <% if (locals.errors&&errors.email) {%>
                           <div class="text-danger">
                             <%= errors.email.msg %> 
