@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
     <%- include('./partials/head')%>
-    <link rel="stylesheet" href="/css/users.css">
+    <link rel="stylesheet" href="/css/user.css">
     <title>User</title>
 </head>
 <body>
     <%- include('./partials/header')%>
     <main>
-        <div>
-            <h2>hola <%= user.nombre %> </h2>
-            <img src="/images/users/<%users.image%>" alt="">
-            <br>
-            <br>
-            <div>mail:<%= user.email%></div>
-
-
+        
+        <h2 class="user">hola <%= user.nick %> </h2>
+        <img src="/images/users/<%= user.image%>" alt="foto_perfil" class="image">
+        <div class="datos">
+            <div>
+                <div>nombre: <%= user.nombre%></div>
+                <div>mail: <%= user.email%></div>
+                <div>dni: <%= user.dni%></div>
+            </div>
 
         </div>
     </main>

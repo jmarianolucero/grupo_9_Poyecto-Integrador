@@ -271,29 +271,11 @@
  },
  {
   "id": 31,
-  "name": "Martín García",
-  "userName": "mgarcia",
-  "dni": "20384576",
-  "password": "123456",
-  "email": "mgarcia@gmail.com"
- },
- {
-  "id": 32,
-  "name": "Juan Perez",
-  "userName": "jperez",
-  "dni": "28349985",
-  "password": "123456",
-  "email": "jperez@gmail.com",
-  "image": "1633471696624.png"
- },
- {
-  "id": 33,
   "nombre": "andy",
   "nick": "primus",
   "dni": "12345",
-  "pass": "$2a$10$uUdQ9hM.8pJdjlmmvKLjGOjcb5AYplrxyMSi9wFYCtGOKBAAXu1wi",
+  "pass": "$2a$10$v84m18YnZf5WI7Jf3eE7QeYj3alHA7uVbFWSrlKXSZlCdM/zIdVaK",
   "email": "andy@gmail.com",
-  "terminos": "on",
-  "image": "1633654622220.png"
+  "image": "1633807575698.jpg"
  }
 ]
