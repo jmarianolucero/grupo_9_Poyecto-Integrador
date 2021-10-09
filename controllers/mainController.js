@@ -2,7 +2,8 @@ const controller = {
     "home":(req,res)=>{
         res.render("home")
     },
-    "cart":(req,res)=>{res.render("shopping-cart")
+    "cart":(req,res)=>{
+        res.render("shopping-cart")
     }
 }
 

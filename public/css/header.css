@@ -46,8 +46,15 @@ header{
     color: white;
 }
 .search-bar{
-    width: 200px;
-    border-radius: 5px;
+    border-radius: 4px;
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 10px 15px;
+    text-align:left;
+    text-decoration: none;
+    display: inline-block;
+    width: 88%;
 }
 form i{
     color: white;
@@ -60,6 +67,10 @@ form div input{
     margin-right: 15px;
 }
 .carrito a i{
+    color: white;
+    margin-left: 10px;
+}
+.user-account a i{
     color: white;
     margin-left: 10px;
 }
