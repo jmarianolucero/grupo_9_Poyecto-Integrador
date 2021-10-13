@@ -99,15 +99,6 @@
   "status": "able"
  },
  {
-  "id": 1633797604754,
-  "name": "Guitarra Criolla",
-  "description": "rgergerg",
-  "price": "180.000",
-  "image": "1633797604735.png",
-  "category": "cuerdas",
-  "status": "able"
- },
- {
   "id": 1633798046651,
   "name": "Guitarra Criolla",
   "description": "Arreglo middleware",
