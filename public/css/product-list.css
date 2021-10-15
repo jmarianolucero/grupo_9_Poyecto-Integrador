@@ -12,6 +12,9 @@ main{
     max-width: 100%;
     width: 90%; 
 }
+a {
+    margin: 5px;
+}
 .productos h3{
     font-size: 35px;
     padding-bottom: 3%;
@@ -20,39 +23,31 @@ section .productos{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+
 }
-/*div .producto{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    position: relative;
-    max-width: 40%;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}*/
-.listaDeProductos a{
+div .producto{
     text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 40%;
+    height: auto;
+    margin: 5px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    padding: 5px;
 }
-.imagen-producto{
-    width: 50%;
+img {
+    max-width: 100%;
+    height: auto;
 }
 .description{
     margin-top: 10px;
     color: #46494c;
-    margin-bottom: 35px;
-    margin-left: 15px;
 }
 .price{
     font-size: 12px;
     font-weight: bold;
-    margin-left: 15px;
     color: #0c758f;
-}
-
-.div-line{
-    margin: 15px;
-    border-bottom: 2px solid #c5c3c6;
-    left: 0%;
 }
 
 
