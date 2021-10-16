@@ -12,8 +12,9 @@
             <h3>Nuestos Productos</h3>
             <section class="productos">
                 <article >
+                    <div class="listaDeProductos">
                 <% products.forEach(product => { %>
-                <div class="listaDeProductos">
+                
                     
                     <a href="/products/<%= product.id %>">
                         
@@ -29,9 +30,9 @@
                         
                     </a>
                     </article>
-                </div>
+                
                 <% }) %>
-
+               </div>
 
             </section>
 
