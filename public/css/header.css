@@ -75,14 +75,20 @@ form div input{
     margin-left: 10px;
 }
 .navbar ul{
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 10px;
-    list-style: none;
-    background-color: #4c5c68;
+    display: none;
 }
 .navbar ul li a{
     text-decoration: none;
     color: white;
 }
+@media (min-width: 769px){
+    .navbar ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 10px;
+        list-style: none;
+        background-color: #4c5c68;
+    }
+}
+ 

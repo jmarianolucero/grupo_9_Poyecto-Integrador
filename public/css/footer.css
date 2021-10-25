@@ -8,3 +8,9 @@ footer{
     justify-content: space-between;
     width: 10%;
 }
+a i {
+    color: #f6f6f6;
+}
+.copyright {
+    color: #f6f6f6;
+}
