@@ -117,7 +117,7 @@ const controller = {
 			});
 	},
 	create: (req, res) => {
-
+		ACA VA LA VISTA DEL FORMULARIO DE CREACIÓN
 	},
 	store: (req, res) => {
 		Products
@@ -136,7 +136,7 @@ const controller = {
         .catch(error => res.send(error))
     },
 	edit: (req, res) => {
-
+		ACA VA LA VISTA DEL FORMULARIO DE EDICIÓN
 	},
 	update: (req, res) => {
 		let productId = req.params.id;
