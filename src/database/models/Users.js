@@ -1,32 +1,32 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Product';
+    let alias = 'User';
     let cols = {
         id: {
             type: dataTypes.BIGINT(10),
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
-            type: dataTypes.STRING(100),
+        full_name: {
+            type: dataTypes.STRING(45),
             allowNull: false
         },
-        price: {
-            type: dataTypes.INTEGER,
+        user_name: {
+            type: dataTypes.STRING(45),
             allowNull: false
         },
-        description: {
-            type: dataTypes.TEXT,
+        email: {
+            type: dataTypes.STRING(45),
+            allowNull: false
+        },
+        password: {
+            type: dataTypes.STRING(45),
             allowNull: false
         },
         category: {
             type: dataTypes.STRING(45),
-            allowNull: false
-        },
-        color: {
-            type: dataTypes.STRING(45),
             allowNull: true
         },
-        image: {
+        avatar: {
             type: dataTypes.STRING(45),
             allowNull: false
         },
@@ -42,24 +42,21 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tablename: 'products',
+        tablename: 'users',
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         deletedAt: 'deleted_at',
         paranoid: true
     }
-    const Product = sequelize.define(alias, cols, config); 
+    const User = sequelize.define(alias, cols, config); 
 
-    Product.associate = function (models) {
-        Product.belongsToMany(models.Order, {// el modelo Order todavía no está creado
+    User.associate = function (models) {
+        User.hasMany(models.Order, {// el modelo Order todavía no está creado
             as: "orders",
-            through: 'order_detail',
-            foreignKey: 'product_id',
-            otherKey: 'order_id',
-            timestamps: false
+            foreignKey: 'user_id'
         })
     }
 
-    return Product
+    return User;
 };
