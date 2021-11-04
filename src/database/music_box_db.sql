@@ -18,6 +18,30 @@ USE `music_box_db`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `category`
+--
+
+DROP TABLE IF EXISTS `category`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `category` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `category`
+--
+
+LOCK TABLES `category` WRITE;
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` VALUES (1,'Cuerdas'),(2,'Percusión'),(3,'Viento'),(4,'Sonido'),(5,'Accesorios'),(6,'Taller');
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `order_detail`
 --
 
@@ -89,14 +113,16 @@ CREATE TABLE `products` (
   `name` varchar(100) NOT NULL,
   `price` int NOT NULL,
   `description` longtext,
-  `category` varchar(45) NOT NULL,
   `color` varchar(45) DEFAULT NULL,
   `image` varchar(45) DEFAULT NULL,
+  `category_id` int DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`),
+  KEY `category_id_idx` (`category_id`),
+  CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,6 +131,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Clarinete Estandar Yamaha Ycl255 Con Boquilla Y Estuche',382499,'adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae','null','clarinete-yamaha.png',3,'2021-11-04 14:55:26','2021-11-04 12:18:24',NULL),(2,'Bateria Mapex Armory 5 Cuerpos Medidas Fusión Bombo 20',373947,'adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae','null','bateria-mapex.png',2,'2021-11-04 14:55:26','2021-11-04 12:21:43',NULL),(3,'Guitarra Electrica Fender Stratocaster Standar Mexico Rsw Sb',349242,'adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae','null','guitarra-electrica-fender.png',1,'2021-11-04 14:55:26','2021-11-04 12:21:20',NULL),(4,'Auriculares Inalambricos Sennheiser RS120 Bluetooth Cerrados',397599,'adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae','null','auriculares-inalambricos.png',5,'2021-11-04 14:55:26','2021-11-04 12:19:00',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,14 +147,14 @@ CREATE TABLE `users` (
   `full_name` varchar(45) NOT NULL,
   `user_name` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `category` varchar(45) DEFAULT NULL,
-  `avatar` varchar(45) NOT NULL,
+  `avatar` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,7 +163,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Martín González','mgonz','mgonzalez@gmail.com','a73kgfb4mgvk5','persona','img-user1','2021-11-01 23:08:55','2021-11-01 20:10:38',NULL);
+INSERT INTO `users` VALUES (1,'Martín González','mgonz','mgonzalez@gmail.com','a73kgfb4mgvk5','persona','img-user1','2021-11-01 23:08:55','2021-11-01 20:10:38',NULL),(2,'Phyllys Howel','phowel0','phowel0@sciencedaily.com','FjXpfV2','persona','https://robohash.org/reprehenderitofficiasit.png?size=50x50&set=set1','2021-11-04 14:35:05','2021-11-04 11:35:05',NULL),(3,'Marlyn Childerley','mchilderley1','mchilderley1@economist.com','hIDpUD0Z','persona','https://robohash.org/etdoloreveniet.png?size=50x50&set=set1','2021-11-04 14:35:05','2021-11-04 11:35:05',NULL),(4,'Sybil Farrin','sfarrin2','sfarrin2@examiner.com','WWTF5zeHY','persona','https://robohash.org/quifacilistemporibus.png?size=50x50&set=set1','2021-11-04 14:35:05','2021-11-04 11:35:05',NULL),(5,'Ruy Antat','rantat3','rantat3@bing.com','h3vyn7Q','persona','https://robohash.org/faciliscorporisaut.png?size=50x50&set=set1','2021-11-04 14:35:05','2021-11-04 11:35:05',NULL),(6,'Will Childe','wchilde4','wchilde4@cocolog-nifty.com','VzQdtOAIHxXQ','persona','https://robohash.org/eumdoloresreiciendis.png?size=50x50&set=set1','2021-11-04 14:35:05','2021-11-04 11:35:05',NULL),(7,'Thurstan Alywin','talywin5','talywin5@guardian.co.uk','ezhOgG','persona','https://robohash.org/ullamrepudiandaeexercitationem.png?size=50x50&set=set1','2021-11-04 14:35:05','2021-11-04 11:35:05',NULL),(8,'Franky Macklin','fmacklin6','fmacklin6@tripod.com','CR6cI7OYm','persona','https://robohash.org/quisdoloresunt.png?size=50x50&set=set1','2021-11-04 14:35:05','2021-11-04 11:35:05',NULL),(9,'Hayden Keld','hkeld7','hkeld7@nytimes.com','az46Vnr','persona','https://robohash.org/sedmodia.png?size=50x50&set=set1','2021-11-04 14:35:05','2021-11-04 11:35:05',NULL),(10,'Dion Yurivtsev','dyurivtsev8','dyurivtsev8@forbes.com','dXIFEHGm5A','persona','https://robohash.org/doloremquoddeserunt.png?size=50x50&set=set1','2021-11-04 14:35:05','2021-11-04 11:35:05',NULL),(11,'Ania McGuff','amcguff9','amcguff9@rambler.ru','Aw7OCGfgEZ','persona','https://robohash.org/facereearumarchitecto.png?size=50x50&set=set1','2021-11-04 14:35:05','2021-11-04 11:35:05',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -149,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-02 22:34:26
+-- Dump completed on 2021-11-04 12:23:34

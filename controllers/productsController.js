@@ -156,6 +156,14 @@ const controller = {
         .then(()=> {
             return res.redirect('/products')})            
         .catch(error => res.send(error))
+	},
+	destroy: function (req,res) {
+        let productId = req.params.id;
+        Products
+        .destroy({where: {id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
+        .then(()=>{
+            return res.redirect('/products')})
+        .catch(error => res.send(error))
 	}*/
 };
 
