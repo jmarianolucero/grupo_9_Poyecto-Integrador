@@ -4,6 +4,7 @@ const db = require('../src/database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const Products = db.Product;
+const Category = db.Category;
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 
@@ -24,9 +25,9 @@ const controller = {
 	},
 
 	// Create - Form to create
-	create: (req, res) => {
+	/*create: (req, res) => {
 		res.render('new-product')
-	},
+	},*/
 
 	// Create -  Method to store
 	store: (req, res) => {
@@ -115,11 +116,14 @@ const controller = {
 			.then(products => {
 				res.render('detail.ejs', { products });
 			});
-	},
+	},*/
 	create: (req, res) => {
-		ACA VA LA VISTA DEL FORMULARIO DE CREACIÓN
+		Category.findAll()
+		.then(categorias => {
+			return res.render('new-product', {categorias : categorias})
+		})
 	},
-	store: (req, res) => {
+	/*store: (req, res) => {
 		Products
         .create(
             {
@@ -136,7 +140,7 @@ const controller = {
         .catch(error => res.send(error))
     },
 	edit: (req, res) => {
-		ACA VA LA VISTA DEL FORMULARIO DE EDICIÓN
+		//ACA VA LA VISTA DEL FORMULARIO DE EDICIÓN
 	},
 	update: (req, res) => {
 		let productId = req.params.id;

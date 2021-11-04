@@ -59,6 +59,10 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: 'order_id',
             timestamps: false
         })
+        Product.belongsTo(models.Category, {
+            as: "categories",
+            foreignKey: 'category_id'
+        })
     }
 
     return Product

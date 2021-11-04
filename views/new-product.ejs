@@ -27,13 +27,12 @@
                 <div>
                     <label>Categoría</label>
                     <select name="categoria" id="">
-                        <option value="" disabled selected>Seleccione una</option>
-                        <option value="cuerdas">Cuerdas</option>
-                        <option value="">Percusión</option>
-                        <option value="">Viento</option>
-                        <option value="">Sonido</option>
-                        <option value="">Accesorios</option>
-                        <option value="">Taller</option>
+                        <% for( let i = 0; i < categorias.length; i++ ) { %>
+                            <option value='<%= categorias[i].id %>'>
+                                <%= categorias[i].name%> 
+                            </option>
+                        <% } %>
+                        
                     </select>
                 </div>
                 <div>
