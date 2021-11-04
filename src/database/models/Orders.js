@@ -12,14 +12,14 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         created_at: {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
             allowNull: false
         },
         updated_at: {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
         },
         deleted_at: {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
         }
     };
     let config = {
@@ -37,7 +37,7 @@ module.exports = (sequelize, dataTypes) => {
             as: "orders",
             foreignKey: 'user_id'
         })
-        
+
         Order.belongsToMany(models.Product, {
             as: "products",
             through: 'order_detail',

@@ -31,14 +31,14 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         created_at: {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
             allowNull: false
         },
         updated_at: {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
         },
         deleted_at: {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
         }
     };
     let config = {
