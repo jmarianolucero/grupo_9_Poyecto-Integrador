@@ -22,9 +22,9 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        category: {
-            type: dataTypes.STRING(45),
-            allowNull: true
+        category_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false
         },
         avatar: {
             type: dataTypes.STRING(45),
