@@ -106,5 +106,14 @@
   "image": "1633798046636.png",
   "category": "cuerdas",
   "status": "able"
+ },
+ {
+  "id": 1636123154724,
+  "name": "Violín Stradivarius",
+  "description": "Violín Stradivarius invaluable.",
+  "price": "2000000",
+  "image": "1636123154709.png",
+  "category": "1",
+  "status": "able"
  }
 ]

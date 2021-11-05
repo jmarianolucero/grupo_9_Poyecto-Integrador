@@ -12,14 +12,14 @@
             <div class="edit-product-form">
 
              <h3>Modificar el Producto</h3>
-             <form class="caja" action="/products/<%= productToEdit[0].id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+             <form class="caja" action="/products/<%= products.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                  <div>
                   <label>Nombre del Producto</label>
-                   <input type="text" id="name" name="name" placeholder="Nombre de producto"  value='<%= productToEdit[0].name %>'>     
+                   <input type="text" id="name" name="name" placeholder="Nombre de producto"  value='<%= products.name %>'>     
                  </div>
                  <div>
                    <label>Descripción</label>
-                    <textarea id="descripcion" name="description" placeholder="Descripcion"  value='<%= productToEdit[0].description %>'> </textarea>
+                    <textarea id="descripcion" name="description" placeholder="Descripcion"  value='<%= products.description %>'> </textarea>
                  </div>
                  <div>
                    <label>Imagen</label>
@@ -27,27 +27,34 @@
                  </div>
                  <div>
                    <label>Categoría</label>
-                    <select id="" name="category">
-                    <% let categoryOptions = ['Sin seleccionar','Cuerdas', 'Percusión', 'Viento', 'Sonido', 'Taller'] %>
-                    <% for ( i = 0 ; i < categoryOptions.length ; i++) { %>
-                        <% let isSelected = (productToEdit[0].category == categoryOptions[i]) ? 'selected' : ''; %>
-                        <option value="<%= categoryOptions[i] %>" <%= isSelected %>> <%= categoryOptions[i] %> </option>
-                    <% } %>
-                   </select>   
+                      <select name="categoria" id="">
+                        <% for( let i = 0; i < categorias.length; i++ ) { %>
+                          <% if (categorias[i].id == products.category_id) { %>
+                            <option value='<%= categorias[i].id %>' selected>
+                              <%= categorias[i].name%> 
+                          </option>
+                          <% } else { %>
+                            <option value='<%= categorias[i].id %>'>
+                              <%= categorias[i].name%> 
+                          </option>
+                            <% } %> 
+                        <% } %>
+                        
+                    </select>
                 </div>
                 <div>
-                  <label>Color</label>              
+                 <!-- <label>Color</label>              
                    <select id="" name="color">
                     <% let colorOptions = ['Sin seleccionar','Blanco', 'Negro', 'Rojo', 'Azul', 'Naranja', 'Verde'] %>
                     <% for ( i = 0 ; i < colorOptions.length ; i++) { %>
                         <% let isSelected = (productToEdit[0].color == colorOptions[i]) ? 'selected' : ''; %>
                         <option value="<%= colorOptions[i] %>" <%= isSelected %>> <%= colorOptions[i] %> </option>
                     <% } %>
-                   </select>      
+                   </select>  -->    
                 </div>
                 <div>
                   <label>Precio</label>
-                   <input type="text" name="price" placeholder="Precio" id="precio" value='<%= productToEdit[0].price %>'>    
+                   <input type="text" name="price" placeholder="Precio" id="precio" value='<%= products.price %>'>    
                 </div>
                 <div>
                   <button id="boton" type="submit" name="edit">Guardar Cambios</button>

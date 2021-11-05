@@ -11,53 +11,54 @@ const productsFilePath = path.join(__dirname, '../data/products.json');
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		let allProducts = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		let products = allProducts.filter(i => i.status == "able")
-		res.render('products', { products: products })
+		Products.findAll({
+			include: ['categories']
+		})
+			.then(products => {
+				res.render('products.ejs', { products })
+			})
 	},
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		idParams = req.params.id
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		let productoAMostrar = products.find(n => n.id == idParams);
-		res.render('detail', { products: productoAMostrar })
+		Products.findByPk(req.params.id)
+			.then(products => {
+				res.render('detail.ejs', { products });
+			});
 	},
-
-	// Create - Form to create
-	/*create: (req, res) => {
-		res.render('new-product')
-	},*/
+	create: (req, res) => {
+		Category.findAll()
+		.then(categorias => {
+			return res.render('new-product', {categorias : categorias})
+		})
+	},
 
 	// Create -  Method to store
 	store: (req, res) => {
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		console.log(req.file)
-		let newProduct = {
-			id: Date.now(),
-			name: req.body.titulo,
-			description: req.body.descripcion,
+		Products
+        .create({
+            name: req.body.titulo,
 			price: req.body.precio,
-			image: req.file.filename,
-			category: req.body.categoria,
-			status: 'able'
-
-
-		};
-
-		products.push(newProduct);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-
-		res.redirect('/products')
-
-	},
+			description: req.body.descripcion,
+			category_id: req.body.categoria,
+			color: req.body.colores,
+			image: req.file.filename
+            }
+        )
+        .then(()=> {
+            return res.redirect('/products')})            
+        .catch(error => res.send(error))
+    },
 
 	// Update - Form to edit
 	edit: (req, res) => {
-		let idProduct = req.params.id;
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		let productToEdit = products.filter(n => n.id == idProduct);
-		res.render('edit-product', { productToEdit: productToEdit })
+		let productId = req.params.id;
+		let promProducts = Products.findByPk(productId, {include: ['categories']});
+		let promCategories = Category.findAll();
+		Promise.all([promProducts, promCategories])
+		.then((products, categorias) => {
+			res.render('edit-product.ejs', { products, categorias});
+		});
 	},
 	// Update - Method to update
 	update: (req, res) => {
@@ -103,46 +104,9 @@ const controller = {
 		res.redirect('/products')
 
 	},
-	//Nuevos controladores
+	//Nuevos controladores - A MEDIDA QUE VAN FUNCIONANDO LOS SACAMOS DE ACA Y BORRAMOS LOS ANTERIORES
 
-	/*index: (req, res) => {
-		Products.findAll()
-			.then(products => {
-				res.render('products.ejs', { products })
-			})
-	},
-	detail: (req, res) => {
-		Products.findByPk(req.params.id)
-			.then(products => {
-				res.render('detail.ejs', { products });
-			});
-	},*/
-	create: (req, res) => {
-		Category.findAll()
-		.then(categorias => {
-			return res.render('new-product', {categorias : categorias})
-		})
-	},
-	/*store: (req, res) => {
-		Products
-        .create(
-            {
-            name: req.body.titulo,
-			price: req.body.precio,
-			description: req.body.descripcion,
-			category: req.body.categoria,
-			color: req.body.color,
-			image: req.file.filename
-            }
-        )
-        .then(()=> {
-            return res.redirect('/products')})            
-        .catch(error => res.send(error))
-    },
-	edit: (req, res) => {
-		//ACA VA LA VISTA DEL FORMULARIO DE EDICIÓN
-	},
-	update: (req, res) => {
+	/*update: (req, res) => {
 		let productId = req.params.id;
         Products
         .update(

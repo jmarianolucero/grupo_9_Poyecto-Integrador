@@ -18,7 +18,7 @@ router.post('/', fileUpload.single('product-image'), productsController.store);
 router.get('/:id', productsController.detail); 
 
 /*** EDIT ONE PRODUCT ***/ 
-router.get('/:id/edit', productsController.edit); 
+router.get('/edit/:id', productsController.edit); 
 router.put('/:id', fileUpload.single("product-image"), productsController.update); 
 
 

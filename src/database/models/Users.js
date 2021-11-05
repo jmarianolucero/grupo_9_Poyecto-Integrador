@@ -52,7 +52,7 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config); 
 
     User.associate = function (models) {
-        User.hasMany(models.Order, {// el modelo Order todavía no está creado
+        User.hasMany(models.Order, {
             as: "orders",
             foreignKey: 'user_id'
         })
