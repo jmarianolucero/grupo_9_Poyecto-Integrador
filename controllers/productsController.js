@@ -5,6 +5,7 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const Products = db.Product;
 const Category = db.Category;
+const Color = db.Color;
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 
@@ -28,9 +29,11 @@ const controller = {
 	},
 	// Create - Muestra formulario de creación
 	create: (req, res) => {
-		Category.findAll()
-		.then(categorias => {
-			return res.render('new-product', {categorias : categorias})
+		let promCategories = Category.findAll();
+		let promColors = Color.findAll();
+		Promise.all([promCategories, promColors])
+		.then(([categorias, colors]) => {
+			return res.render('new-product', {categorias : categorias, colors : colors})
 		})
 	},
 
@@ -42,7 +45,7 @@ const controller = {
 			price: req.body.precio,
 			description: req.body.descripcion,
 			category_id: req.body.categoria,
-			color: req.body.colores,
+			color_id: req.body.colores,
 			image: req.file.filename
             }
         )
@@ -56,9 +59,10 @@ const controller = {
 		let productId = req.params.id;
 		let promProducts = Products.findByPk(productId);
 		let promCategories = Category.findAll();
-		Promise.all([promProducts, promCategories])
-			.then(([products, categorias]) => {
-			res.render('edit-product.ejs', { products : products, categorias : categorias});
+		let promColors = Color.findAll();
+		Promise.all([promProducts, promCategories, promColors])
+			.then(([products, categorias, colors]) => {
+			res.render('edit-product.ejs', { products : products, categorias : categorias, colors : colors});
 		});
 	},
 	// Update - Actualiza los datos de un producto
@@ -70,8 +74,8 @@ const controller = {
             name: req.body.titulo,
 			price: req.body.precio,
 			description: req.body.descripcion,
-			category: req.body.categoria,
-			color: req.body.color,
+			category_id: req.body.categoria,
+			color_id: req.body.color,
 			image: req.file.filename
             },
             {

@@ -42,6 +42,30 @@ INSERT INTO `categories` VALUES (1,'Cuerdas'),(2,'Percusión'),(3,'Viento'),(4,'
 UNLOCK TABLES;
 
 --
+-- Table structure for table `colors`
+--
+
+DROP TABLE IF EXISTS `colors`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `colors` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `colors`
+--
+
+LOCK TABLES `colors` WRITE;
+/*!40000 ALTER TABLE `colors` DISABLE KEYS */;
+INSERT INTO `colors` VALUES (1,'Blanco'),(2,'Negro'),(3,'Rojo'),(4,'Azúl'),(5,'Verde'),(6,'Gris'),(7,'Amarillo'),(8,'Otro');
+/*!40000 ALTER TABLE `colors` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `order_detail`
 --
 
@@ -113,16 +137,18 @@ CREATE TABLE `products` (
   `name` varchar(100) NOT NULL,
   `price` int NOT NULL,
   `description` longtext,
-  `color` varchar(45) DEFAULT NULL,
   `image` varchar(45) DEFAULT NULL,
   `category_id` int DEFAULT NULL,
+  `color_id` int DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id_idx` (`category_id`),
-  CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `color_id_idx` (`color_id`),
+  CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
+  CONSTRAINT `color_id` FOREIGN KEY (`color_id`) REFERENCES `colors` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +157,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Clarinete Estandar Yamaha Ycl255 Con Boquilla Y Estuche',382499,'adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae','null','clarinete-yamaha.png',3,'2021-11-04 14:55:26','2021-11-04 12:18:24',NULL),(2,'Bateria Mapex Armory 5 Cuerpos Medidas Fusión Bombo 20',373947,'adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae','null','bateria-mapex.png',2,'2021-11-04 14:55:26','2021-11-04 12:21:43',NULL),(3,'Guitarra Electrica Fender Stratocaster Standar Mexico Rsw Sb',349242,'adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae','null','guitarra-electrica-fender.png',1,'2021-11-04 14:55:26','2021-11-04 12:21:20',NULL),(4,'Auriculares Inalambricos Sennheiser RS120 Bluetooth Cerrados',397599,'adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae','null','auriculares-inalambricos.png',5,'2021-11-04 14:55:26','2021-11-04 12:19:00',NULL);
+INSERT INTO `products` VALUES (1,'Clarinete Estandar Yamaha Ycl255 Con Boquilla Y Estuche',382499,'adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae','clarinete-yamaha.png',3,3,'2021-11-04 14:55:26','2021-11-05 20:37:41',NULL),(2,'Bateria Mapex Armory 5 Cuerpos Medidas Fusión Bombo 20',373947,'adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae','bateria-mapex.png',2,2,'2021-11-04 14:55:26','2021-11-05 20:37:24',NULL),(3,'Guitarra Electrica Fender Stratocaster Standar Mexico Rsw Sb',349242,'adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae','guitarra-electrica-fender.png',1,1,'2021-11-04 14:55:26','2021-11-05 20:37:17',NULL),(4,'Auriculares Inalambricos Sennheiser RS120 Bluetooth Cerrados',397599,'adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae','auriculares-inalambricos.png',5,5,'2021-11-04 14:55:26','2021-11-05 20:37:06',NULL),(5,'Violín Stradivarius',5000000,'    Violin invaluable de la más fina calidad.','1636155729478.png',1,7,'2021-11-05 14:51:32','2021-11-05 23:42:09',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,4 +202,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-04 17:03:00
+-- Dump completed on 2021-11-05 20:43:21

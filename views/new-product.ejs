@@ -37,14 +37,14 @@
                 </div>
                 <div>
                 <label>Color:</label>
-                <div class="color-checkbox">
-                    <label for="colores">Blanco<input type="checkbox" name="colores" value="Blanco"></label>
-                    <label for="colores">Negro<input type="checkbox" name="colores" value="Negro"></label>
-                    <label for="colores">Rojo<input type="checkbox" name="colores" value="Rojo"></label>
-                    <label for="colores">Azúl<input type="checkbox" name="colores" value="Azúl"></label>
-                    <label for="colores">Naranja<input type="checkbox" name="colores" value="Naranja"></label>
-                    <label for="colores">Verde<input type="checkbox" name="colores" value="Verde"></label>
-                </div>
+                <select name="color" id="">
+                    <% for( let i = 0; i < colors.length; i++ ) { %>
+                        <option value='<%= colors[i].id %>'>
+                            <%= colors[i].name%> 
+                        </option>
+                    <% } %>
+                    
+                </select>
                     
                 </div>
                 <div>
