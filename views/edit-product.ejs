@@ -8,54 +8,55 @@
 <body>
     <%- include('./partials/header')%>
     <main>
-        <form action="/products" class='caja' method="POST" enctype="multipart/form-data">
-            <div class="edit-product-form">
+        <div class='caja'>
+          <div class="edit-product-form">
 
-             <h3>Modificar el Producto</h3>
-             <form class="caja" action="/products/<%= products.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                 <div>
-                  <label>Nombre del Producto</label>
-                   <input type="text" id="name" name="name" placeholder="Nombre de producto"  value='<%= products.name %>'>     
-                 </div>
-                 <div>
-                   <label>Descripción</label>
-                    <textarea id="descripcion" name="description" placeholder="Descripcion"> <%= products.description %></textarea>
-                 </div>
-                 <div>
-                   <label>Imagen</label>
-                    <input type="file" name="image" placeholder="Imagen" id="product-image" accept=".jpg, .png" multiple>   
-                 </div>
-                 <div>
-                   <label>Categoría</label>
-                      <select name="categoria" id="">
-                        <% for( let i = 0; i < categorias.length; i++ ) { %>
-                          <% if (categorias[i].id == products.category_id) { %>
-                            <option value='<%= categorias[i].id %>' selected>
-                              <%= categorias[i].name%> 
-                          </option>
-                          <% } else { %>
-                            <option value='<%= categorias[i].id %>'>
-                              <%= categorias[i].name%> 
-                          </option>
-                            <% } %> 
-                        <% } %>
-                        
-                    </select>
+            <h3>Modificar el Producto</h3>
+            <form class="caja" action="/products/edit/<%= products.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div>
+                 <label>Nombre del Producto</label>
+                  <input type="text" id="name" name="titulo" placeholder="Nombre de producto"  value='<%= products.name %>'>     
                 </div>
                 <div>
-                
+                  <label>Descripción</label>
+                   <textarea id="descripcion" name="descripcion" placeholder="Descripcion"> <%= products.description %></textarea>
                 </div>
                 <div>
-                  <label>Precio</label>
-                   <input type="text" name="price" placeholder="Precio" id="precio" value='<%= products.price %>'>    
+                  <label>Imagen</label>
+                   <input type="file" name="imagen" placeholder="Imagen" id="product-image" accept=".jpg, .png" multiple>   
                 </div>
                 <div>
-                  <button id="boton" type="submit" name="edit">Guardar Cambios</button>
-                </div>
-
-            </div>
+                  <label>Categoría</label>
+                     <select name="categoria" id="">
+                       <% for( let i = 0; i < categorias.length; i++ ) { %>
+                         <% if (categorias[i].id == products.category_id) { %>
+                           <option value='<%= categorias[i].id %>' selected>
+                             <%= categorias[i].name%> 
+                         </option>
+                         <% } else { %>
+                           <option value='<%= categorias[i].id %>'>
+                             <%= categorias[i].name%> 
+                         </option>
+                           <% } %> 
+                       <% } %>
+                       
+                   </select>
+               </div>
+               <div>
+               
+               </div>
+               <div>
+                 <label>Precio</label>
+                  <input type="text" name="precio" placeholder="Precio" id="precio" value='<%= products.price %>'>    
+               </div>
+               <div>
+                 <button id="boton" type="submit" name="edit">Guardar Cambios</button>
+               </div>
+              </form>
+          </div>
+           
+        </div>
             
-        </form>
     </main>
     <%- include('./partials/footer')%>
     
