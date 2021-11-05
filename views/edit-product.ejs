@@ -19,7 +19,7 @@
                  </div>
                  <div>
                    <label>Descripción</label>
-                    <textarea id="descripcion" name="description" placeholder="Descripcion"  value='<%= products.description %>'> </textarea>
+                    <textarea id="descripcion" name="description" placeholder="Descripcion"> <%= products.description %></textarea>
                  </div>
                  <div>
                    <label>Imagen</label>
@@ -43,14 +43,7 @@
                     </select>
                 </div>
                 <div>
-                 <!-- <label>Color</label>              
-                   <select id="" name="color">
-                    <% let colorOptions = ['Sin seleccionar','Blanco', 'Negro', 'Rojo', 'Azul', 'Naranja', 'Verde'] %>
-                    <% for ( i = 0 ; i < colorOptions.length ; i++) { %>
-                        <% let isSelected = (productToEdit[0].color == colorOptions[i]) ? 'selected' : ''; %>
-                        <option value="<%= colorOptions[i] %>" <%= isSelected %>> <%= colorOptions[i] %> </option>
-                    <% } %>
-                   </select>  -->    
+                
                 </div>
                 <div>
                   <label>Precio</label>

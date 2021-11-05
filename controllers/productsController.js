@@ -53,11 +53,11 @@ const controller = {
 	// Update - Form to edit
 	edit: (req, res) => {
 		let productId = req.params.id;
-		let promProducts = Products.findByPk(productId, {include: ['categories']});
+		let promProducts = Products.findByPk(productId);
 		let promCategories = Category.findAll();
 		Promise.all([promProducts, promCategories])
-		.then((products, categorias) => {
-			res.render('edit-product.ejs', { products, categorias});
+			.then(([products, categorias]) => {
+			res.render('edit-product.ejs', { products : products, categorias : categorias});
 		});
 	},
 	// Update - Method to update
@@ -90,20 +90,15 @@ const controller = {
 	},
 
 	// Delete - Delete one product from DB
-	destroy: (req, res) => {
-		let idProduct = req.params.id;
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		products.forEach(product => {
-			if (product.id == idProduct) {
-				product.status = "disable"
-
-			};
-		})
-		fs.writeFileSync(productsFilePath, JSON.stringify(products));
-
-		res.redirect('/products')
-
-	},
+	// FUNCIONA PERO HACE UN HARD DELETE. BORRA EL ELEMENTO DE LA BASE.
+	destroy: function (req,res) {
+        let productId = req.params.id;
+        Products
+        .destroy({where: {id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
+        .then(()=>{
+            return res.redirect('/products')})
+        .catch(error => res.send(error))
+	}
 	//Nuevos controladores - A MEDIDA QUE VAN FUNCIONANDO LOS SACAMOS DE ACA Y BORRAMOS LOS ANTERIORES
 
 	/*update: (req, res) => {
@@ -124,15 +119,7 @@ const controller = {
         .then(()=> {
             return res.redirect('/products')})            
         .catch(error => res.send(error))
-	},
-	destroy: function (req,res) {
-        let productId = req.params.id;
-        Products
-        .destroy({where: {id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
-        .then(()=>{
-            return res.redirect('/products')})
-        .catch(error => res.send(error))
-	}*/
+	},*/
 };
 
 module.exports = controller;
