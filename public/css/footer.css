@@ -1,6 +1,8 @@
 footer{
     padding:30px 15px 15px 15px;
     background-color:#1985a1;
+    margin-bottom: 0%;
+    bottom: 0%;
 }
 .list-inline{
     display: flex;
@@ -9,8 +11,8 @@ footer{
     width: 10%;
 }
 a i {
-    color: #f6f6f6;
+    color: #dcdcdd;
 }
 .copyright {
-    color: #f6f6f6;
+    color: #dcdcdd;
 }
