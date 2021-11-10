@@ -7,39 +7,7 @@
         
     </head>
     <body>
-        <header>
-            <div class="top-header">
-                <div class="contenedor1">
-                    <div class="logo">
-                       <a href="/"><img src="/images/Logo Music Box.png" alt="Logo de Music Box"></a>
-                    </div>
-                    <div><i class="fas fa-map-marker-alt"></i></div>
-                </div>
-                <div class="contenedor2">
-                    <form action="/" method="GET">
-                        <div>
-                            <input type="text" name="busqueda" placeholder="Buscá aquí tu producto" class="search-bar"><i class="fas fa-search"></i>
-                        </div>   
-                    </form>
-                </div>
-                <div class="contenedor3">
-                    <div class="register">
-                        <a href="/users/register">Registrate</a>
-                    </div>
-                    <div class="login">
-                        <a href="/users/login">Iniciá Sesión</a>
-                    </div>
-                    
-                    <div class="user-account">
-                        <a href="/users"><i class="far fa-user-circle"></i></a>
-                    </div>
-                    <div class="carrito">
-                        <a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-        </header>
+        <%- include('./partials/header')%>
         <main>
             <div class="carrousel">
                 <a href=""><i class="fas fa-arrow-left"></i></a>
@@ -119,6 +87,7 @@
             </section>
         </main>
         <%- include('./partials/footer')%>
+       
     </body>
 
 
