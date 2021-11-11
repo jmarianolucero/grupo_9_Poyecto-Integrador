@@ -110,17 +110,23 @@ form div input{
     right: 0;
     bottom: 0;
     z-index: 99;
-    width: 30%;
+    width: 40%;
     height: 70%;
-    background: #1985a1;
+    background-color: #1986a1c4;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     color: white;
     list-style: none;
     padding-top: 4rem;
   }
   .menu li a{
-      color: white;
+      color: #faf3f3;
+      font-size: 24px;
+      font-weight: 2000;
       list-style: none;
       text-decoration: none;
+      
+
      
   }
   .showMenu {
