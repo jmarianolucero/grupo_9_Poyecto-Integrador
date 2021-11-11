@@ -20,31 +20,32 @@ main{
     
     display: flex;
     max-width: 100%;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
 }
 
 .categorias div{
     display: flex;
     width: 5%;
     padding: 2% 3%;
-    justify-content: center;
+    justify-content: space-around;
 }
 
- .categorias div img{
-     width: 30px;
-     justify-self: center;
- }
+ 
 
  div .button{
     border: 3px solid #b6c8cd;
     border-radius: 10px;
     text-align: center;
+    min-width: 18%;
  }
 
 .button a{
     text-decoration: none;
     color: #46494c;
+}
+.button a i {
+    color: #46494c;
+    font-size: 40px;
 }
 div .button:hover{
     border: 3px solid #1985a1;
