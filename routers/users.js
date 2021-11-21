@@ -13,7 +13,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 
 //Rutas    
-router.get('/', usersController.userhome);
+/*router.get('/', usersController.userhome);*/
 
 //Home de login
 router.get('/login', guestMiddleware, usersController.login);

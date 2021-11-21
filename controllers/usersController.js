@@ -2,26 +2,27 @@ const fs = require('fs');
 const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const { validationResult } = require('express-validator');
-const User = require("../models/Users");
-const bcryptjs = require ("bcryptjs");
 const db = require('../src/database/models');
+const User = db.User;
+const bcryptjs = require ("bcryptjs");
+
 
 const controller = {
-    userhome: (req, res)=>{
+    /*userhome: (req, res)=>{
         res.render('profile')
-    },
+    },*/
     login:(req,res)=>{
         res.render("login")
     },
     loginProcess:(req,res)=>{
-            db.User.findAll()
+            User.findAll()
               .then(users => {
                 let userToLogin = users.find(i => i.email == req.body.email)
         
                 if (userToLogin) {
                   let isOkThePassword = bcryptjs.compareSync(
-                    req.body.pass,
-                    userToLogin.pass,
+                    req.body.password,
+                    userToLogin.password,
                   )
                   if (isOkThePassword) {
                     delete userToLogin.password
@@ -31,10 +32,10 @@ const controller = {
                       res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 30 }) 
                     }
         
-                    return res.redirect('/users/profile')
+                    return res.redirect('/profile')
                   }
         
-                  return res.render('users/login', {
+                  return res.render('login', {
                     errors: {
                       email: {
                         msg: 'Contraseña incorrecta',
@@ -43,7 +44,7 @@ const controller = {
                   })
                 }
         
-                return res.render('users/login', {
+                return res.render('login', {
                   errors: {
                     email: {
                       msg: 'No existe el usuario',
@@ -79,10 +80,15 @@ const controller = {
 
     },*/
 
-    profile:(req,res)=>{
-         
-        return res.render("user",{user : req.session.userLogged})
-    },
+    profile: (req, res) => { 
+        User.findByPk(parseInt(req.session.userLogged.id))
+          .then((user) => {
+            res.render('profile', {
+          user: user,
+        })
+        })
+      
+      },
 
     register:(req,res)=>{
         res.render("register")
@@ -96,7 +102,7 @@ const controller = {
             });
         }
         
-        db.User.findAll()
+        User.findAll()
         .then(users => {
             let userInDB = users.find(i => i.email == req.body.email)
             if (userInDB){
@@ -109,7 +115,7 @@ const controller = {
                     oldData: req.body
                 })
             } else {
-                db.User.create({
+                User.create({
                     full_name: req.body.nombre,
                     user_name: req.body.nick,
                     email: req.body.email,
