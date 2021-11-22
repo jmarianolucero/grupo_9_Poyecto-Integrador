@@ -31,3 +31,5 @@ Sprints Entregados:
 - Sprint 2
 - Sprint 3
 - Sprint 4
+- Sprint 5
+- Sprint 6
