@@ -3,7 +3,7 @@
 <head>
     <%- include('./partials/head')%>
     <title>Hola <%= user.user_name %> </title>
-    <link rel="stylesheet" href="/css/user.css">
+    <link rel="stylesheet" href="/css/profile.css">
     
 </head>
 <body>
@@ -17,6 +17,13 @@
                 <div>nombre: <%= user.full_name%></div>
                 <div>mail: <%= user.email%></div>
             </div>
+
+        </div>
+        <div class="action-buttons">
+            <a href="/users/edit/<%= user.id %> "><button>Editar</button></a>
+            <form action="/users/delete/<%= user.id %> ">
+               <button type="submit">Eliminar</button>
+            </form>
 
         </div>
     </main>

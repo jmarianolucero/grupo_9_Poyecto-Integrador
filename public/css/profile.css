@@ -1,0 +1,49 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    font-family: 'Exo', sans-serif;
+}
+
+.user{
+    text-align: center;
+}
+
+.image{
+    display: flex;
+    padding-left:35%;
+    padding-right: 35%;
+    width: 30% ;
+    border-radius: 50%;
+    
+}
+
+.datos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.action-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    
+    color:white;
+    background-color: black;
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+}
+
+button:active{
+    background-color: #1985a1;
+}

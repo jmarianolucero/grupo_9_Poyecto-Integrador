@@ -30,4 +30,9 @@ router.post("/",fileUpload.single('userImage'), validations, usersController.new
 //Perfil de Usuario
 router.get("/profile", authMiddleware, usersController.profile);
 
+//Editar usuario
+router.get('/edit/:id', authMiddleware, usersController.edit);
+router.put('/edit/:id', authMiddleware, fileUpload.single('user-image'), usersController.update);
+router.delete('/delete/:id', usersController.delete);
+
 module.exports = router;

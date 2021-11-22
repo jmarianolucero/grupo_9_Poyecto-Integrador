@@ -128,7 +128,53 @@ const controller = {
                 })
             }
         })
-    }
+    },
+    edit: (req, res) => {
+      User.findByPk(parseInt(req.params.id))
+        .then(function (userToEdit) {
+        res.render('edit-user', { userToEdit })
+      })
+    },
+  
+    update: (req, res) => {
+      let id = req.params.id
+      User.findByPk(id)
+        .then(theUser => {
+          User.update(
+            {
+              full_name: req.body.full_name || theUser.full_name,
+              user_name: req.body.user_name || theUser.user_name,
+              email: req.body.email || theUser.email,
+              password: req.body.password == "" ? theUser.password : bcryptjs.hashSync(req.body.password, 10),
+              avatar: req.file == undefined ? theUser.avatar : req.file.filename,
+            },
+            {
+              where: {
+                id: id,
+              },
+            },
+        )
+            .then(() => {
+              return res.redirect('/users/profile/')
+            })
+            .catch((error) => res.send(error))
+        })
+    },
+  
+    logout: (req, res) => {
+      res.clearCookie('userEmail')
+      req.session.destroy()
+      return res.redirect('/')
+    },
+  
+    delete: function (req, res) {
+       User.destroy({
+              where: {id: parseInt(req.params.id)},force: true}) // force: true es para asegurar que se ejecute la acción
+          .then(() => {
+              return res.redirect('/')
+          })
+          .catch(error => res.send(error))
+        }
 };
 
 module.exports = controller;
