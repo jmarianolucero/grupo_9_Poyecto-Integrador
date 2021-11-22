@@ -32,7 +32,7 @@ const controller = {
                       res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 30 }) 
                     }
         
-                    return res.redirect('/profile')
+                    return res.redirect('/users/profile')
                   }
         
                   return res.render('login', {
@@ -82,10 +82,8 @@ const controller = {
 
     profile: (req, res) => { 
         User.findByPk(parseInt(req.session.userLogged.id))
-          .then((user) => {
-            res.render('profile', {
-          user: user,
-        })
+          .then(user => {
+            res.render('profile', {user})
         })
       
       },

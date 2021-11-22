@@ -27,7 +27,7 @@ router.get("/register", guestMiddleware, usersController.register);
 //Procesar register
 router.post("/",fileUpload.single('userImage'), validations, usersController.newUser);
 
-//Home de user
+//Perfil de Usuario
 router.get("/profile", authMiddleware, usersController.profile);
 
 module.exports = router;
