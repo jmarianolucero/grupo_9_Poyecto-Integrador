@@ -15,15 +15,30 @@
             <form class="caja" action="/products/edit/<%= products.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div>
                  <label>Nombre del Producto</label>
-                  <input type="text" id="name" name="titulo" placeholder="Nombre de producto"  value='<%= products.name %>'>     
+                  <input type="text" id="name" name="titulo" placeholder="Nombre de producto"  value='<%= products.name %>'>
+                  <% if (locals.errors&&errors.titulo) {%>
+                    <div class="text-danger">
+                      <%= errors.titulo.msg %> 
+                    </div>
+                  <% }%>       
                 </div>
                 <div>
                   <label>Descripción</label>
                    <textarea id="descripcion" name="descripcion" placeholder="Descripcion"> <%= products.description %></textarea>
+                   <% if (locals.errors&&errors.descripcion) {%>
+                    <div class="text-danger">
+                      <%= errors.descripcion.msg %> 
+                    </div>
+                  <% }%>  
                 </div>
                 <div>
                   <label>Imagen</label>
-                   <input type="file" name="imagen" placeholder="Imagen" id="product-image" accept=".jpg, .png" multiple>   
+                   <input type="file" name="productImage" placeholder="Imagen" id="productImage" accept=".jpg, .png, .jpeg" multiple value="<%= products.image %> ">
+                   <% if (locals.errors&&errors.productImage) {%>
+                    <div class="text-danger">
+                      <%= errors.productImage.msg %> 
+                    </div>
+                  <% }%>     
                 </div>
                 <div>
                   <label>Categoría</label>

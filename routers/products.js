@@ -5,13 +5,14 @@ const productsController = require("../controllers/productsController");
 
 //Middlewares
 const fileUpload = require('../middlewares/multerProductsMiddleware');
+const productsValidations = require('../middlewares/validateProductsMiddleware');
 
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', productsController.index); 
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', productsController.create); 
-router.post('/', fileUpload.single('product-image'), productsController.store); 
+router.post('/', fileUpload.single('productImage'), productsValidations, productsController.store); 
 
 
 /*** GET ONE PRODUCT ***/ 
@@ -19,7 +20,7 @@ router.get('/:id', productsController.detail);
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id', productsController.edit); 
-router.put('/edit/:id', fileUpload.single("imagen"), productsController.update); 
+router.put('/edit/:id', productsValidations, fileUpload.single('productImage'), productsController.update); 
 
 
 /*** DELETE ONE PRODUCT ***/ 

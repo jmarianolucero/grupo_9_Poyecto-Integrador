@@ -15,14 +15,29 @@
                 <div>
                     <label>Título del producto</label>
                     <input type="text"  name="titulo" placeholder="Producto" required>
+                    <% if (locals.errors&&errors.titulo) {%>
+                        <div class="text-danger">
+                          <%= errors.titulo.msg %> 
+                        </div>
+                      <% }%>  
                 </div>
                 <div>
                     <label for="descripcion"> Descripcion</label>
                     <textarea name="descripcion" id="descripcion" cols="30" placeholder="Describe el producto"></textarea>
+                    <% if (locals.errors&&errors.descripcion) {%>
+                        <div class="text-danger">
+                          <%= errors.descripcion.msg %> 
+                        </div>
+                      <% }%>  
                 </div>
                 <div>
                     <label>Imagen de producto</label>
-                    <input type="file" name="product-image" id="product-image" accept=".jpg, .png" multiple>
+                    <input type="file" name="productImage" id="productImage" accept=".jpg, .png, .jpeg" multiple>
+                    <% if (locals.errors&&errors.productImage) {%>
+                        <div class="text-danger">
+                          <%= errors.productImage.msg %> 
+                        </div>
+                      <% }%>  
                 </div>
                 <div>
                     <label>Categoría</label>
