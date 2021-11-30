@@ -1,4 +1,4 @@
-addEventListener("DOMContentLoaded", ()=>{
+windows.addEventListener("load", ()=>{
 
     const imagenes = [1,2,3,4,5,6,7,8]
     let i = 1

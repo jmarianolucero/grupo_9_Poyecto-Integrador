@@ -202,7 +202,7 @@ img .car {
     border-radius: 50%;
 }
 
-.resultado {
+.resaltado {
     background-color: rgba(228, 69, 69, 1) ;
     transition: background-color .8s;
 }
