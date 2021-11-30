@@ -118,3 +118,6 @@ footer{
     font-family: 'Exo', sans-serif;
     width: 100%;
 }
+div .text-danger{
+    color: red;
+}

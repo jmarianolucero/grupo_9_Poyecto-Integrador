@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require('express-validator');
 const db = require('../src/database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
@@ -39,6 +40,13 @@ const controller = {
 
 	// Create - guarda un nuevo producto
 	store: (req, res) => {
+		const resultValidation = validationResult(req);
+		if (resultValidation.errors.length > 0) {
+			return res.render('new-product', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
+		}
 		Products
         .create({
             name: req.body.titulo,
@@ -68,6 +76,24 @@ const controller = {
 	// Update - Actualiza los datos de un producto
 	update: (req, res) => {
 		let productId = req.params.id;
+		let promProducts = Products.findByPk(productId);
+		let promCategories = Category.findAll();
+		let promColors = Color.findAll();
+		Promise.all([promProducts, promCategories, promColors])
+			.then(([products, categorias, colors]) => {
+				const resultValidation = validationResult(req);
+				if (resultValidation.errors.length > 0) {
+					return res.render('edit-product', {
+					products,
+					categorias,
+					colors,
+					errors: resultValidation.mapped(),
+					oldData: req.body
+				});
+		}
+	})
+		
+		
         Products
         .update(
             {
@@ -83,8 +109,10 @@ const controller = {
             })
         .then(()=> {
             return res.redirect('/products/' + req.params.id)
-		})            
+		})
+	            
         .catch(error => res.send(error))
+	
 	},
 
 	// Delete - Borra un producto (soft delete)

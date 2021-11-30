@@ -106,3 +106,6 @@ input[type=text] {
     margin: 15px 0px 10px 20px;
   
 }
+div .text-danger{
+    color: red;
+}

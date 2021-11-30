@@ -21,13 +21,18 @@
                       </div>
         
                       <form>
-                        <input type="text" id="login"  name="email" placeholder="Correo Electrónico">
+                        <input type="text" id="login"  name="email" placeholder="Correo Electrónico" value="<%= locals.oldData ? oldData.email : null %>">
                         <% if (locals.errors&&errors.email) {%>
                           <div class="text-danger">
                             <%= errors.email.msg %> 
                           </div>
                         <% }%>  
                         <input type="password" id="password"  name="password" placeholder="Contraseña">
+                        <% if (locals.errors&&errors.password) {%>
+                          <div class="text-danger">
+                            <%= errors.password.msg %> 
+                          </div>
+                        <% }%>  
                         <label for=""><input type="checkbox" name="rememberMe"> Recordar usuario</label>
                         
                         <input type="submit" value="Inicia Sesión">
