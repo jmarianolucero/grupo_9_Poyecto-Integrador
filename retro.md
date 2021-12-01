@@ -27,3 +27,21 @@ Deltas:
  Aún no hemos llegado a aplicar metodologías o herramientas que hayan demostrado su ineficacia o desventaja con respecto a otras semejantes. 
 
 
+ Retrospectiva del Sexto Sprint:
+
+ • Start Doing:
+  Focalizar en pendientes según importancia de entrega.
+
+• More Of: 
+ Participación activa de integrantes y diversificación de tareas. 
+
+• Keep Doing: 
+ Actualización y chequeo de funcionalidades.
+
+• Less Of: 
+ Estancamiento en un problema. Seguir por otras tareas y retomar luego. 
+ 
+• Stop Doing: 
+ Dejar actividades inconclusas.
+
+
