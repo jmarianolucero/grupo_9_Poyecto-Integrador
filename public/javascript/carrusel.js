@@ -1,5 +1,7 @@
 addEventListener("DOMContentLoaded", ()=>{
 
+    
+    const navbar = document.querySelector(".navbar")
     const imagenes = ["/images/drums.png","/images/guitarra.png","/images/saxo.png"]
     let i = 1
     const img1 = document.querySelector("#img1")
@@ -44,6 +46,8 @@ addEventListener("DOMContentLoaded", ()=>{
     }
 
     setInterval(slideshow,4000)
+    navbar.classList.remove("navbar")
+    navbar.classList.add("navbar1")
 })
 
 

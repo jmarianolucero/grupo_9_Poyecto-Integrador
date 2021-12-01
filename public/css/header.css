@@ -77,6 +77,12 @@ form div input{
 .navbar ul{
     display: none;
 }
+
+.navbar1 {
+    display: none;
+}
+
+
 .navbar ul li a{
     text-decoration: none;
     color: white;
