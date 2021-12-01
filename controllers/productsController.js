@@ -40,27 +40,40 @@ const controller = {
 
 	// Create - guarda un nuevo producto
 	store: (req, res) => {
-		const resultValidation = validationResult(req);
-		if (resultValidation.errors.length > 0) {
-			return res.render('new-product', {
+		let promCategories = Category.findAll();
+		let promColors = Color.findAll();
+		Promise.all([promCategories, promColors])
+		.then(([categorias, colors]) => {
+			const resultValidation = validationResult(req);
+			if (resultValidation.errors.length > 0) {
+				return res.render('new-product', {
+				categorias : categorias,
+				colors : colors,
 				errors: resultValidation.mapped(),
 				oldData: req.body
 			});
-		}
-		Products
-        .create({
-            name: req.body.titulo,
-			price: req.body.precio,
-			description: req.body.descripcion,
-			category_id: req.body.categoria,
-			color_id: req.body.colores,
-			image: req.file.filename
-            }
-        )
-        .then(()=> {
-            return res.redirect('/products')})            
-        .catch(error => res.send(error))
+		} 
+		})
+		if (req.file) {
+			/*if(req.file.filename){*/
+				Products
+        		.create({
+				name: req.body.titulo,
+				price: req.body.precio,
+				description: req.body.descripcion,
+				image: req.file.filename,
+				category_id: req.body.categoria,
+				color_id: req.body.color,
+				})
+				.then(()=> {
+				res.redirect('/products/')})
+				.catch(error => res.send(error))
+
+			/*}*/
+			
+			} 
     },
+	
 
 	// Update - Formulario de edición de un producto 
 	edit: (req, res) => {

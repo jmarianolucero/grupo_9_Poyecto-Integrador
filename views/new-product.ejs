@@ -14,7 +14,7 @@
                 <form>
                 <div>
                     <label>Título del producto</label>
-                    <input type="text"  name="titulo" placeholder="Producto" required>
+                    <input type="text"  name="titulo" placeholder="Producto">
                     <% if (locals.errors&&errors.titulo) {%>
                         <div class="text-danger">
                           <%= errors.titulo.msg %> 
@@ -32,7 +32,7 @@
                 </div>
                 <div>
                     <label>Imagen de producto</label>
-                    <input type="file" name="productImage" id="productImage" accept=".jpg, .png, .jpeg" multiple>
+                    <input type="file" name="productImage" id="productImage" accept=".jpg, .png, .jpeg" >
                     <% if (locals.errors&&errors.productImage) {%>
                         <div class="text-danger">
                           <%= errors.productImage.msg %> 
@@ -64,7 +64,7 @@
                 </div>
                 <div>
                     <label for="precio">Precio: </label>
-                    <input type="text"  name="precio" placeholder="Precio" required>
+                    <input type="text"  name="precio" placeholder="Precio">
                 </div>
                 
 
