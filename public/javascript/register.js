@@ -1,16 +1,80 @@
 window.addEventListener('load', function(){
-    let formulario = document.querySelector('form');
-    formulario.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        let errores = [];
-        let nombre = document.querySelector('#nombre');
-        if (nombre.value == ''){
-            errores.push('Debes completar con tu nombre completo')
-        } else if (nombre.value.length < 3){
-            errores.push('El campo debe tener al menos 2 caracteres')
-        }
-        let nombreUsuario = document.querySelector('#nick');
-        
-    })
+    let formulario = document.querySelector('#formulario');
+    formulario.addEventListener('submit', validacionForm) 
 })
+function validacionForm(e) {
+    e.preventDefault()
+  
+    //Nombre
+    var nombre = document.getElementById('nombre').value
+   var  errorNombre = document.getElementById('errorNombre')
+    if (nombre.length == 0) {
+      errorNombre.classList.add('show')
+      errorNombre.classList.remove('hidden')
+      errorNombre.innerHTML = 'Debes ingresar tu nombre completo'
+    } else if (nombre.length > 0){
+        errorNombre.classList.remove('show')
+      errorNombre.classList.add('hidden')
+    }
+  
+    //Email
+    var email = document.getElementById('email').value
+    errorEmail = document.getElementById('errorEmail')
+    const charEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)+\.\S+/.test(email)
+    if (email === '') {
+      errorEmail.classList.add('show')
+      errorEmail.classList.remove('hidden')
+      errorEmail.innerHTML = 'Debes ingresar tu correo electrónico'
+    }else if (email !== ''){
+        errorEmail.classList.remove('show')
+      errorEmail.classList.add('hidden')
+    } else if (!charEmail) {
+      errorEmail.classList.add('show')
+      errorEmail.classList.remove('hidden')
+      errorEmail.innerHTML = 'Debes ingresar un email válido'
+    } else if (charEmail){
+        errorEmail.classList.remove('show')
+      errorEmail.classList.add('hidden')
+    }
+  
+    //Imagen de Usuario
+    var UserImage = document.getElementById('userImage').value
+    errorImage = document.getElementById('errorImage')
+    var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i
+    if (!allowedExtensions.exec(UserImage)) {
+      errorImage.classList.add('show')
+      errorImage.classList.remove('hidden')
+      errorImage.innerHTML =
+        'Formatos admitidos: .jpeg - .jpg - .png'
+    } else if (allowedExtensions.exec(UserImage)){
+        errorImage.classList.remove('show')
+        errorImage.classList.add('hidden')
+    }
+  
+    //Contraseña
+    var password = document.getElementById('password').value
+    errorPassword = document.getElementById('errorPassword')
+    const charPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/.test(
+      password,
+    )
+    if (password.length < 8) {
+      errorPassword.classList.add('show')
+      errorPassword.classList.remove('hidden')
+      errorPassword.innerHTML = 'La contraseña debe tener al menos 8 caracteres'
+      return
+    } else if(password.length > 8){
+        errorImage.classList.remove('show')
+        errorImage.classList.add('hidden')
+    } else if (!charPass) {
+      errorPassword.classList.add('show')
+      errorPassword.classList.remove('hidden')
+      errorPassword.innerHTML =
+        'La contraseña debe contener minúsculas, mayúsculas, números y carcateres especiales'
+        return
+    }else if(charPass){
+        errorImage.classList.remove('show')
+        errorImage.classList.add('hidden')
+    }
+  
+    this.submit()
+  }

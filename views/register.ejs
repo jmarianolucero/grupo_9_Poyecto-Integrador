@@ -8,13 +8,14 @@
     <body>
         <%- include('./partials/header')%>
         <main>
-            <form action="/users/" class="caja" method="POST" enctype="multipart/form-data">
+            <form action="/users/" class="caja" id="formulario" method="POST" enctype="multipart/form-data">
                
                 <div class="formulario"> 
                     <h1>Formulario de registro</h1>
                     
                     <div class="form">
                         <input class="barra" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%= locals.oldData ? oldData.nombre : null %>" >
+                        <div id="errorNombre" class="errorMsg hidden"></div>
                         <% if (locals.errors && errors.nombre) { %>
                             <div class="text-danger">
                                 <%= errors.nombre.msg %> 
@@ -37,23 +38,25 @@
                             </div>
                         <% } %>
                     </div>  
-                    <div class="form">
-                        <input class="barra" type="password" name="pass" id="pass" placeholder="Contraseña">
-                        <% if (locals.errors && errors.pass) { %>
-                            <div class="text-danger">
-                                <%= errors.pass.msg %> 
-                            </div>
-                        <% } %>
-                    </div>
+                    
                     <div class="form">
                         <input class="barra" type="email" name="email" id="email" placeholder="Email" value="<%= locals.oldData ? oldData.email : null %>">
+                        <div id="errorEmail" class="errorMsg hidden"></div>
                         <% if (locals.errors && errors.email) { %>
                             <div class="text-danger">
                                 <%= errors.email.msg %> 
                             </div>
                         <% } %>
-                        
                     </div>
+                    <div class="form">
+                        <input class="barra" type="password" name="pass" id="password" placeholder="Contraseña">
+                        <div id="errorPassword" class="errorMsg hidden"></div>
+                        <% if (locals.errors && errors.pass) { %>
+                            <div class="text-danger">
+                                <%= errors.pass.msg %> 
+                            </div>
+                        <% } %>
+                    </div> 
                     <div class="form">
                         <input class="barra" type="password" name="repass" id="repass" placeholder="Repetir Contraseña">
                         <% if (locals.errors && errors.repass) { %>
@@ -62,15 +65,16 @@
                             </div>
                         <% } %>
                     </div>
-
                     <div class="form">
-                        <input class="barra" type="file" name="userImage" id="user-image" accept=".jpg, .png">
+                        <input class="barra" type="file" name="userImage" id="userImage" accept=".jpg, .png">
+                        <div id="errorImage" class="errorMsg hidden"></div>
                         <% if (locals.errors && errors.userImage) { %>
                             <div class="text-danger">
                                 <%= errors.userImage.msg %> 
                             </div>
                         <% } %>
                     </div>
+                    <div class="form"></div>
                     
                     <div class="terminos, hl">
                         <input type="checkbox" name="terminos" id="TyC" required>
@@ -91,5 +95,6 @@
             </form>
         </main>
         <%- include('./partials/footer')%> 
+        <script src="/javascript/register.js"></script>
     </body>
 </html>
