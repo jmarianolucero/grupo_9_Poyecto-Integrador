@@ -111,3 +111,17 @@ button:active{
     -webkit-border-radius: 0 0 10px 10px;
     border-radius: 0 0 10px 10px;
   }
+
+.show {
+      display: block;
+      text-align: center;
+      font-weight: 800;
+}
+.errorMsg{
+    color: red;
+    font-size: 16px;
+}
+.hidden{
+    display: none;
+}
+

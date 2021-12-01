@@ -18,17 +18,16 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: false
         },
+        image: {
+            type: dataTypes.STRING(45),
+            allowNull: false
+        },
         category_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
         color_id: {
             type: dataTypes.INTEGER,
-            allowNull: false
-        },
-        image: {
-            type: dataTypes.STRING(45),
-            allowNull: false
         },
         created_at: {
             type: dataTypes.DATE,
@@ -52,7 +51,7 @@ module.exports = (sequelize, dataTypes) => {
     const Product = sequelize.define(alias, cols, config); 
 
     Product.associate = function (models) {
-        Product.belongsToMany(models.Order, {// el modelo Order todavía no está creado
+        Product.belongsToMany(models.Order, {
             as: "orders",
             through: 'order_detail',
             foreignKey: 'product_id',
