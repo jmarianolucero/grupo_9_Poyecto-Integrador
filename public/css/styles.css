@@ -163,8 +163,7 @@ div .button:hover{
 
 #slideshow{
     position: relative;
-    z-index: 998;
-    height: 600px;   
+    z-index: 998;   
 }
 
 img .car {
@@ -177,6 +176,7 @@ img .car {
 }
 
 #img2 {
+    display: none;
     left: 100%;
 }
 

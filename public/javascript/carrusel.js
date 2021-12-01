@@ -2,7 +2,7 @@ addEventListener("DOMContentLoaded", ()=>{
 
     
     const navbar = document.querySelector(".navbar")
-    const imagenes = ["/images/drums.png","/images/guitarra.png","/images/saxo.png"]
+    const imagenes = ["/images/banner.png","/images/banner2.png","/images/banner3.png"]
     let i = 1
     const img1 = document.querySelector("#img1")
     const img2 = document.querySelector("#img2")
