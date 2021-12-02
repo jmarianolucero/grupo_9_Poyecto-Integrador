@@ -6,8 +6,8 @@ function validacionForm(e) {
     e.preventDefault()
   
     //Nombre
-    var nombre = document.getElementById('nombre').value
-   var  errorNombre = document.getElementById('errorNombre')
+    const nombre = document.getElementById('nombre').value
+    const errorNombre = document.getElementById('errorNombre')
     if (nombre.length == 0) {
       errorNombre.classList.add('show')
       errorNombre.classList.remove('hidden')
@@ -18,8 +18,8 @@ function validacionForm(e) {
     }
   
     //Email
-    var email = document.getElementById('email').value
-    errorEmail = document.getElementById('errorEmail')
+    const email = document.getElementById('email').value
+    const errorEmail = document.getElementById('errorEmail')
     const charEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)+\.\S+/.test(email)
     if (email === '') {
       errorEmail.classList.add('show')
@@ -38,9 +38,9 @@ function validacionForm(e) {
     }
   
     //Imagen de Usuario
-    var UserImage = document.getElementById('userImage').value
-    errorImage = document.getElementById('errorImage')
-    var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i
+    const UserImage = document.getElementById('userImage').value
+    const errorImage = document.getElementById('errorImage')
+    const allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i
     if (!allowedExtensions.exec(UserImage)) {
       errorImage.classList.add('show')
       errorImage.classList.remove('hidden')
@@ -52,8 +52,8 @@ function validacionForm(e) {
     }
   
     //Contraseña
-    var password = document.getElementById('password').value
-    errorPassword = document.getElementById('errorPassword')
+    const password = document.getElementById('password').value
+    const errorPassword = document.getElementById('errorPassword')
     const charPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/.test(
       password,
     )
