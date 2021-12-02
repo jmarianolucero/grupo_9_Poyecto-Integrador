@@ -33,7 +33,12 @@ router.get("/profile", authMiddleware, usersController.profile);
 
 //Editar usuario
 router.get('/edit/:id', authMiddleware, usersController.edit);
-router.put('/edit/:id', authMiddleware, fileUpload.single('user-image'), usersController.update);
+router.put('/edit/:id', authMiddleware, fileUpload.single('userImage'), usersController.update);
+
+//Logout
+router.get('/logout/', usersController.logout);
+
+//Borrar usuario
 router.delete('/delete/:id', usersController.delete);
 
 module.exports = router;
