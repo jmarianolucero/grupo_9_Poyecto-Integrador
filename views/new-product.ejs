@@ -8,13 +8,16 @@
 <body>
     <%- include('./partials/header')%>
     <main>
-        <form action="/products/" class='caja' method="POST" enctype="multipart/form-data">
+        <form action="/products/" id="form" class='caja' method="POST" enctype="multipart/form-data">
             <div class="new-product-form">
                 <h2>Creá tu producto</h2>
                 <form>
                 <div>
+                    <ul id="errores"></ul>
+                </div>
+                <div>
                     <label>Título del producto</label>
-                    <input type="text"  name="titulo" placeholder="Producto">
+                    <input type="text" id="nombre" name="titulo" placeholder="Producto">
                     <% if (locals.errors&&errors.titulo) {%>
                         <div class="text-danger">
                           <%= errors.titulo.msg %> 
@@ -75,6 +78,6 @@
         </form>
     </main>
     <%- include('./partials/footer')%>
-    
+    <script src="/javascript/products.js"></script>
 </body>
 </html>

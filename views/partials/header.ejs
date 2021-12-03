@@ -14,19 +14,33 @@
             </form>
         </div>
         <div class="contenedor3">
-            <div class="register">
-                <a href="/users/register">Registrate</a>
-            </div>
-            <div class="login">
-                <a href="/users/login">Iniciá Sesión</a>
-            </div>
+            <% if (locals.isLogged) { %>
+                <div class="loginNavBar">
+                    <div class="user-account">
+                        <a href="/users/profile"><img src="/images/users/<%= locals.userLogged.avatar %>" width="40" style="border-radius: 100%;"> </a>
+                    </div>
+                    <div class="userGreeting">
+                        Hola, <%= locals.userLogged.full_name %>
+                    </div>
+                    <div class="logout">
+                        <a href="/users/logout">Cerrar sesión</a>
+                    </div>
+                    <div class="carrito">
+                        <a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+            <% } else { %>
+                <div class="register">
+                    <a href="/users/register">Registrate</a>
+                </div>
+                <div class="login">
+                    <a href="/users/login">Iniciá Sesión</a>
+                </div>
+                <div class="carrito">
+                    <a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            <% } %>
             
-            <div class="user-account">
-                <a href="/users"><i class="far fa-user-circle"></i></a>
-            </div>
-            <div class="carrito">
-                <a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
-            </div>
         </div>
         <div class="burger-menu">
             <ul class="menu">

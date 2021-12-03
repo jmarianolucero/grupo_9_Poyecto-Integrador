@@ -156,5 +156,17 @@ form div input{
     .contenedor3{
         display: flex;
     }
+    .loginNavBar{
+        display: flex;
+        align-items: center;
+      }
+      .loginNavBar div{
+          padding: 15px;
+          color: white;
+      }
+      .logout a{
+          color: white;
+          text-decoration: none;
+      }
 }
  

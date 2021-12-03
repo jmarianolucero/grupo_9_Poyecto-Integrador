@@ -12,10 +12,14 @@
           <div class="edit-product-form">
 
             <h3>Modificar el Producto</h3>
-            <form class="caja" action="/products/edit/<%= products.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="caja" id="form" action="/products/edit/<%= products.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+                <div>
+                  <ul id="errores"></ul>
+                </div>
                 <div>
                  <label>Nombre del Producto</label>
-                  <input type="text" id="name" name="titulo" placeholder="Nombre de producto"  value='<%= products.name %>'>
+                  <input type="text" id="nombre" name="titulo" placeholder="Nombre de producto"  value='<%= products.name %>'>
                   <% if (locals.errors&&errors.titulo) {%>
                     <div class="text-danger">
                       <%= errors.titulo.msg %> 
@@ -91,6 +95,7 @@
             
     </main>
     <%- include('./partials/footer')%>
+    <script src="/javascript/products.js"></script>
     
 </body>
 </html>
