@@ -22,12 +22,14 @@
         
                       <form>
                         <input type="text" id="login"  name="email" placeholder="Correo Electrónico" value="<%= locals.oldData ? oldData.email : null %>">
+                        <div id="errorEmail" class="errorMsg hidden"></div>
                         <% if (locals.errors&&errors.email) {%>
                           <div class="text-danger">
                             <%= errors.email.msg %> 
                           </div>
                         <% }%>  
                         <input type="password" id="password"  name="password" placeholder="Contraseña">
+                        <div id="errorPassword" class="errorMsg hidden"></div>
                         <% if (locals.errors&&errors.password) {%>
                           <div class="text-danger">
                             <%= errors.password.msg %> 

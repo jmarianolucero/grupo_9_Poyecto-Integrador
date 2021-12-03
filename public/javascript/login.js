@@ -1,3 +1,5 @@
+import isEmail from 'validator/lib/isEmail';
+
 window.addEventListener('load', function(){
     let formulario = document.querySelector('form.caja');
     formulario.addEventListener('submit', validacionForm) 
@@ -8,8 +10,8 @@ function validacionForm(e) {
   
     //Email
     var email = document.getElementById('login').value
-    errorEmail = document.getElementById('errorEmail')
-    const charEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)+\.\S+/.test(email)
+    var errorEmail = document.getElementById('errorEmail')
+    const charEmail = isEmail
     if (email === '') {
       errorEmail.classList.add('show')
       errorEmail.classList.remove('hidden')
@@ -29,7 +31,7 @@ function validacionForm(e) {
  
     //Contraseña
     var password = document.getElementById('password').value
-    errorPassword = document.getElementById('errorPassword')
+    var errorPassword = document.getElementById('errorPassword')
     const charPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/.test(
       password,
     )
