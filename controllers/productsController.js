@@ -20,6 +20,18 @@ const controller = {
 				res.render('products.ejs', { products })
 			})
 	},
+	//Busca productos en la base de datos
+	search: (req, res) => {
+		Products.findAll({
+			where: {
+				name: {[Op.like]: `%${req.query.search}%`}
+			}
+
+		})
+		.then(products => {
+			res.render('search-products', { products : products })
+		})
+	},
 
 	// Detail - Detalle de un producto
 	detail: (req, res) => {

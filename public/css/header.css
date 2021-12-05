@@ -28,6 +28,9 @@ header{
 .contenedor2{
     display: flex;
 }
+.contenedor2 form{
+    display: flex;
+}
 .contenedor3{
     display: none;
     margin-right: 15px;
@@ -48,6 +51,7 @@ header{
 .search-bar{
     border-radius: 4px;
     background-color: #f6f6f6;
+    margin: auto;
     border: none;
     color: #0d0d0d;
     padding: 10px 15px;
@@ -56,6 +60,20 @@ header{
     display: inline-block;
     width: 88%;
 }
+.search-button{
+    color:white;
+    background-color: black;
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+}
+.search-button:hover{
+    background-color: #4c5c68;
+    color: black;
+    cursor: pointer;
+}
+
 form i{
     color: white;
 }

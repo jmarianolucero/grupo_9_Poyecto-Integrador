@@ -7,10 +7,11 @@
             <div><i class="fas fa-map-marker-alt"></i></div>
         </div>
         <div class="contenedor2">
-            <form action="/" method="GET">
-                <div>
-                    <input type="text" name="busqueda" placeholder="Buscá aquí tu producto" id="search-bar"><i class="fas fa-search"></i>
-                </div>   
+            <form action="/products/search" method="GET">
+                
+                    <input type="search" name="search" placeholder="Buscá aquí tu producto" class="search-bar">
+                    <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+                  
             </form>
         </div>
         <div class="contenedor3">

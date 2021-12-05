@@ -8,7 +8,10 @@ const fileUpload = require('../middlewares/multerProductsMiddleware');
 const productsValidations = require('../middlewares/validateProductsMiddleware');
 
 /*** GET ALL PRODUCTS ***/ 
-router.get('/', productsController.index); 
+router.get('/', productsController.index);
+
+//SEARCH PRODUCTS
+router.get('/search', productsController.search);
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', productsController.create); 
