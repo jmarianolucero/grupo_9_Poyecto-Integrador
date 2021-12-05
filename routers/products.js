@@ -10,6 +10,11 @@ const productsValidations = require('../middlewares/validateProductsMiddleware')
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', productsController.index);
 
+//CATEGORÍAS
+router.get('/viento', productsController.viento);
+router.get('/cuerdas', productsController.cuerdas);
+router.get('/percusion', productsController.percusion);
+
 //SEARCH PRODUCTS
 router.get('/search', productsController.search);
 

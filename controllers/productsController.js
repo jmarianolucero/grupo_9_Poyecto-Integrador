@@ -32,7 +32,42 @@ const controller = {
 			res.render('search-products', { products : products })
 		})
 	},
+	viento: (req, res) => {
+		Products.findAll({
+			include: ['categories'],
+			where: {
+				category_id: 3 
+			}
 
+		})
+		.then(products => {
+			res.render('viento', { products : products })
+		})
+	},
+	cuerdas: (req, res) => {
+		Products.findAll({
+			include: ['categories'],
+			where: {
+				category_id: 1 
+			}
+
+		})
+		.then(products => {
+			res.render('cuerdas', { products : products})
+		})
+	},
+	percusion: (req, res) => {
+		Products.findAll({
+			include: ['categories'],
+			where: {
+				category_id: 2 
+			}
+
+		})
+		.then(products => {
+			res.render('percusion', { products : products})
+		})
+	},
 	// Detail - Detalle de un producto
 	detail: (req, res) => {
 		Products.findByPk(req.params.id)

@@ -8,7 +8,8 @@ const Color = db.Color;
 const controller = {
     "home":(req,res)=>{
         Products.findAll({
-			include: ['categories']
+			include: ['categories'],
+            limit: 4
 		})
 			.then(products => {
 				res.render('home', { products })
