@@ -41,7 +41,7 @@ const controller = {
 
 		})
 		.then(products => {
-			res.render('viento', { products : products })
+			res.render('./categories/viento', { products : products })
 		})
 	},
 	cuerdas: (req, res) => {
@@ -53,7 +53,7 @@ const controller = {
 
 		})
 		.then(products => {
-			res.render('cuerdas', { products : products})
+			res.render('./categories/cuerdas', { products : products})
 		})
 	},
 	percusion: (req, res) => {
@@ -65,7 +65,7 @@ const controller = {
 
 		})
 		.then(products => {
-			res.render('percusion', { products : products})
+			res.render('./categories/percusion', { products : products})
 		})
 	},
 	// Detail - Detalle de un producto
