@@ -8,6 +8,11 @@ const cookies = require('cookie-parser');
 const session = require("express-session");
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
+//API Users
+const apiUsersRouter = require('./routers/api/users')
+//API Products
+const apiProductsRouter = require('./routers/api/products')
+
 // Middlewares
 app.use(session({
     secret:"its a secret",
@@ -29,3 +34,7 @@ app.listen(process.env.PORT || 3000,()=>{console.log("server iniciado")});
 app.use("/",routesMain);
 app.use("/products",routesProduct);
 app.use("/users",routesUser);
+
+//APIs Routes
+app.use('/api/users',apiUsersRouter);
+app.use('/api/products',apiProductsRouter);
