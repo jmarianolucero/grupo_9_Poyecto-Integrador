@@ -36,9 +36,9 @@ module.exports = (sequelize, dataTypes) => {
         updated_at: {
             type: dataTypes.DATE,
         },
-        deleted_at: {
+        /*deleted_at: {
             type: dataTypes.DATE,
-        }
+        }*/
     };
     let config = {
         tablename: 'products',

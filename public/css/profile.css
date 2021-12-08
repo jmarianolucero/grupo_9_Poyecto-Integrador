@@ -38,6 +38,10 @@ button{
     border-radius: 5px;
     margin: 20px;
 }
+p.delete-danger{
+    color: red;
+    font-size: 18px;
+}
 
 button:hover{
     background-color: white;

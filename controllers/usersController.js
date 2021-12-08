@@ -173,10 +173,17 @@ const controller = {
       req.session.destroy()
       return res.redirect('/')
     },
+    deleteProfile: (req, res) => { 
+      User.findByPk((req.session.userLogged.id))
+        .then(user => {
+          res.render('deleteProfile', {user})
+      })
+    
+    },
   
     delete: function (req, res) {
        User.destroy({
-              where: {id: parseInt(req.params.id)},force: true}) // force: true es para asegurar que se ejecute la acción
+              where: {id: (req.params.id)},force: true}) // force: true es para asegurar que se ejecute la acción
           .then(() => {
               return res.redirect('/')
           })

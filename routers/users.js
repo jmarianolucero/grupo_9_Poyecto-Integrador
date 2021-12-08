@@ -39,6 +39,7 @@ router.put('/edit/:id', authMiddleware, fileUpload.single('userImage'), usersCon
 router.get('/logout/', usersController.logout);
 
 //Borrar usuario
+router.get('/delete/:id', authMiddleware, usersController.deleteProfile);
 router.delete('/delete/:id', usersController.delete);
 
 module.exports = router;

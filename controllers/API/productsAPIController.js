@@ -22,6 +22,9 @@ const productsAPIController = {
             }
                 res.json(respuesta);
             })
+            .catch((error) => {
+                console.log(error);
+            })
     },
     
     'detail': (req, res) => {
@@ -36,6 +39,9 @@ const productsAPIController = {
                     data: product
                 }
                 res.json(respuesta);
+            })
+            .catch((error) => {
+                console.log(error);
             });
     }
 }
