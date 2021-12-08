@@ -143,6 +143,7 @@ div .button:hover{
 #slideshow-principal {
     position: relative;
     overflow: hidden;
+    z-index: -1;
 }
 
 #progress-bar-container{

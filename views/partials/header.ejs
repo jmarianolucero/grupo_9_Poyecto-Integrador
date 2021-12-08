@@ -45,13 +45,23 @@
         </div>
         <div class="burger-menu">
             <ul class="menu">
-                <li><a class="menuItem" href="#">Categorías</a></li>
+                <% if (locals.isLogged) { %>
+                <li><a href="/users/profile"><img src="/images/users/<%= locals.userLogged.avatar %>" width="40" style="border-radius: 100%;"> </a> <%= locals.userLogged.full_name %></li>
+                <li><a class="menuItem" href="/products">Todos los productos</a></li>
+                <li><a class="menuItem" href="/users/profile">Perfil de usuario</a></li>
+                <li><a class="menuItem" href="/shopping-cart">Carrito</a></li>
+                <li><a class="menuItem" href="/users/logout">Cerrar Sesión</a></li>
+              </ul>
+                <% } else { %>
                 <li><a class="menuItem" href="/products">Todos los productos</a></li>
                 <li><a class="menuItem" href="/users/register">Registrate</a></li>
                 <li><a class="menuItem" href="/users/login">Iniciá sesión</a></li>
                 <li><a class="menuItem" href="/shopping-cart">Carrito</a></li>
                 <li><a class="menuItem" href="#">Contacto</a></li>
               </ul>
+                <% } %>
+
+                
               <button class="hamburger">
                 <!-- material icons https://material.io/resources/icons/ -->
                 <i class="menuIcon material-icons">menu</i>
