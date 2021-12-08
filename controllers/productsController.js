@@ -24,49 +24,49 @@ const controller = {
 	search: (req, res) => {
 		Products.findAll({
 			where: {
-				name: {[Op.like]: `%${req.query.search}%`}
+				name: { [Op.like]: `%${req.query.search}%` }
 			}
 
 		})
-		.then(products => {
-			res.render('search-products', { products : products })
-		})
+			.then(products => {
+				res.render('search-products', { products: products })
+			})
 	},
 	viento: (req, res) => {
 		Products.findAll({
 			include: ['categories'],
 			where: {
-				category_id: 3 
+				category_id: 3
 			}
 
 		})
-		.then(products => {
-			res.render('./categories/viento', { products : products })
-		})
+			.then(products => {
+				res.render('./categories/viento', { products: products })
+			})
 	},
 	cuerdas: (req, res) => {
 		Products.findAll({
 			include: ['categories'],
 			where: {
-				category_id: 1 
+				category_id: 1
 			}
 
 		})
-		.then(products => {
-			res.render('./categories/cuerdas', { products : products})
-		})
+			.then(products => {
+				res.render('./categories/cuerdas', { products: products })
+			})
 	},
 	percusion: (req, res) => {
 		Products.findAll({
 			include: ['categories'],
 			where: {
-				category_id: 2 
+				category_id: 2
 			}
 
 		})
-		.then(products => {
-			res.render('./categories/percusion', { products : products})
-		})
+			.then(products => {
+				res.render('./categories/percusion', { products: products })
+			})
 	},
 	// Detail - Detalle de un producto
 	detail: (req, res) => {
@@ -80,9 +80,9 @@ const controller = {
 		let promCategories = Category.findAll();
 		let promColors = Color.findAll();
 		Promise.all([promCategories, promColors])
-		.then(([categorias, colors]) => {
-			return res.render('new-product', {categorias : categorias, colors : colors})
-		})
+			.then(([categorias, colors]) => {
+				return res.render('new-product', { categorias: categorias, colors: colors })
+			})
 	},
 
 	// Create - guarda un nuevo producto
@@ -91,41 +91,41 @@ const controller = {
 		let promCategories = Category.findAll();
 		let promColors = Color.findAll();
 		Promise.all([promCategories, promColors])
-		.then(([categorias, colors]) => {
-		if (resultValidation.errors.length > 0) {
-			return res.render('new-product', {
-				errors: resultValidation.mapped(),
-				oldData: req.body,
-				categorias : categorias,
-				colors : colors,
-				
-			});
-		} else {
-			if (req.file){
-		Products
-        .create({
-            name: req.body.titulo,
-			price: req.body.precio,
-			description: req.body.descripcion,
-			category_id: req.body.categoria,
-			color_id: req.body.colores,
-			image: req.file.filename
-            })
-			.then(() => {
-				res.redirect('/products')
+			.then(([categorias, colors]) => {
+				if (resultValidation.errors.length > 0) {
+					return res.render('new-product', {
+						errors: resultValidation.mapped(),
+						oldData: req.body,
+						categorias: categorias,
+						colors: colors,
+
+					});
+				} else {
+					if (req.file) {
+						Products
+							.create({
+								name: req.body.titulo,
+								price: req.body.precio,
+								description: req.body.descripcion,
+								category_id: req.body.categoria,
+								color_id: req.body.colores,
+								image: req.file.filename
+							})
+							.then(() => {
+								res.redirect('/products')
+							})
+							.catch((error) => {
+								console.log(error)
+							})
+					}
+				}
+
 			})
-			.catch((error) => {
-				console.log(error)
-			})	
-		}
-		} 
-			
-		})
-			
-		
-		
-    },
-	
+
+
+
+	},
+
 
 	// Update - Formulario de edición de un producto 
 	edit: (req, res) => {
@@ -135,8 +135,8 @@ const controller = {
 		let promColors = Color.findAll();
 		Promise.all([promProducts, promCategories, promColors])
 			.then(([products, categorias, colors]) => {
-			res.render('edit-product.ejs', { products : products, categorias : categorias, colors : colors});
-		});
+				res.render('edit-product.ejs', { products: products, categorias: categorias, colors: colors });
+			});
 	},
 	// Update - Actualiza los datos de un producto
 	update: (req, res) => {
@@ -149,43 +149,50 @@ const controller = {
 				const resultValidation = validationResult(req);
 				if (resultValidation.errors.length > 0) {
 					return res.render('edit-product', {
-					products,
-					categorias,
-					colors,
-					errors: resultValidation.mapped(),
-					oldData: req.body
-				});
-		}
-	})
-        Products
-        .update(
-            {
-            name: req.body.titulo,
-			price: req.body.precio,
-			description: req.body.descripcion,
-			category_id: req.body.categoria,
-			color_id: req.body.color,
-			image: req.file.filename
-            },
-            {
-                where: {id: productId}
-            })
-        
-            return res.redirect('/products/' + req.params.id)
-	            
-        /*.catch(error => res.send(error))*/
-	
+						products,
+						categorias,
+						colors,
+						errors: resultValidation.mapped(),
+						oldData: req.body
+					});
+				} else {
+					if (req.file) {
+						Products
+							.update(
+								{
+									name: req.body.titulo,
+									price: req.body.precio,
+									description: req.body.descripcion,
+									category_id: req.body.categoria,
+									color_id: req.body.color,
+									image: req.file.filename
+								},
+								{
+									where: { id: productId }
+								})
+							.then(() => {
+								res.redirect('/products/' + req.params.id)
+							})
+							.catch((error) => {
+								console.log(error)
+							})
+					}
+				}
+			})
+
+
 	},
 
 	// Delete - Borra un producto (soft delete)
 	// FUNCIONA PERO HACE UN HARD DELETE. BORRA EL ELEMENTO DE LA BASE.
-	destroy: function (req,res) {
-        let productId = req.params.id;
-        Products
-        .destroy({where: {id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
-        .then(()=>{
-            return res.redirect('/products')})
-        .catch(error => res.send(error))
+	destroy: function (req, res) {
+		let productId = req.params.id;
+		Products
+			.destroy({ where: { id: productId }, force: true }) // force: true es para asegurar que se ejecute la acción
+			.then(() => {
+				return res.redirect('/products')
+			})
+			.catch(error => res.send(error))
 	}
 };
 
