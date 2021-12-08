@@ -44,7 +44,7 @@ const controller = {
         
                   return res.render('login', {
                     errors: {
-                      email: {
+                      password: {
                         msg: 'Contraseña incorrecta',
                       },
                     },
