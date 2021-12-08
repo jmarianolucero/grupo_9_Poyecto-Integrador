@@ -156,7 +156,7 @@ div .button:hover{
 
 #progress-bar{
     height: 100%;
-    background-color:rgba(228, 69, 69, .7);
+    background-color:#7cb3c1;
     border-radius: 0 3px 3px 0;
     transition: width 0.8s;
 }
@@ -169,15 +169,16 @@ div .button:hover{
 img .car {
     position:absolute;
     height: 100%;
-    width: 100%;
+    max-width: 100%;
     top: 0;
     left:0;
-    object-fit: cover;
+    object-fit:scale-down;
 }
 
 #img2 {
     display: none;
     left: 100%;
+    max-width: 100%;
 }
 
 .active{
