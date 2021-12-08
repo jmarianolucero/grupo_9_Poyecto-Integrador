@@ -94,15 +94,14 @@ const controller = {
 		.then(([categorias, colors]) => {
 		if (resultValidation.errors.length > 0) {
 			return res.render('new-product', {
+				errors: resultValidation.mapped(),
+				oldData: req.body,
 				categorias : categorias,
 				colors : colors,
-				errors: resultValidation.mapped(),
-				oldData: req.body
+				
 			});
-		}
-			
-		})
-		if (req.file){
+		} else {
+			if (req.file){
 		Products
         .create({
             name: req.body.titulo,
@@ -111,12 +110,17 @@ const controller = {
 			category_id: req.body.categoria,
 			color_id: req.body.colores,
 			image: req.file.filename
-            }
-        )
-        .then(()=> {
-            return res.redirect('/products')})            
-        .catch(error => res.send(error))	
+            })
+			.then(() => {
+				res.redirect('/products')
+			})
+			.catch((error) => {
+				console.log(error)
+			})	
 		}
+		} 
+			
+		})
 			
 		
 		
@@ -153,8 +157,6 @@ const controller = {
 				});
 		}
 	})
-		
-		
         Products
         .update(
             {
@@ -168,11 +170,10 @@ const controller = {
             {
                 where: {id: productId}
             })
-        .then(()=> {
+        
             return res.redirect('/products/' + req.params.id)
-		})
 	            
-        .catch(error => res.send(error))
+        /*.catch(error => res.send(error))*/
 	
 	},
 

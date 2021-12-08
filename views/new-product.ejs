@@ -17,7 +17,7 @@
                 </div>
                 <div>
                     <label>Título del producto</label>
-                    <input type="text" id="nombre" name="titulo" placeholder="Producto">
+                    <input type="text" id="nombre" name="titulo" placeholder="Producto" value="<%= locals.oldData ? oldData.titulo : null %>">
                     <% if (locals.errors&&errors.titulo) {%>
                         <div class="text-danger">
                           <%= errors.titulo.msg %> 
@@ -26,7 +26,7 @@
                 </div>
                 <div>
                     <label for="descripcion"> Descripcion</label>
-                    <textarea name="descripcion" id="descripcion" cols="30" placeholder="Describe el producto"></textarea>
+                    <textarea name="descripcion" id="descripcion" cols="30" placeholder="Describe el producto"><%= locals.oldData ? oldData.descripcion : null %></textarea>
                     <% if (locals.errors&&errors.descripcion) {%>
                         <div class="text-danger">
                           <%= errors.descripcion.msg %> 
@@ -67,7 +67,7 @@
                 </div>
                 <div>
                     <label for="precio">Precio: </label>
-                    <input type="text"  name="precio" placeholder="Precio">
+                    <input type="text"  name="precio" placeholder="Precio" value="<%= locals.oldData ? oldData.precio : null %>">
                 </div>
                 
 
