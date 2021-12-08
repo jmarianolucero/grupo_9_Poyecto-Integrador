@@ -44,14 +44,19 @@
                     <h3><%= products.description %></h3>
                     <div class="add-cart">
                         <form action="/carrito" method="GET">
-                            <button type="submit">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
+                            <button type="submit" class="add-cart-btn">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
                         </form>
-                        <form action="/products/edit/<%= products.id %>" method="GET" style="display: inline-flex">
-                            <button type="submit" class="action-button edit">EDITAR PRODUCTO</button>
+                        <% if (locals.isLogged) { %>
+                            <div class="edit-delete-btns">
+                                <form action="/products/edit/<%= products.id %>" method="GET" style="display: inline-flex">
+                            <button type="submit" class="action-button edit edit-btn">Editar Producto</button>
                         </form>
 						<form action="/products/<%= products.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-							<button type="submit" class="action-button delete">ELIMINAR</button>
+							<button type="submit" class="action-button delete delete-btn">Eliminar</button>
 						</form>
+                            </div>
+                        
+                        <% } %> 
                     </div>
                     <div class="div-line"></div>
                 </article>
