@@ -21,7 +21,7 @@ window.addEventListener("load", function() {
         
         /* validacion descripcion */
         if (descripcion.value.length<20){
-            errores.push("el campo de DESCRIPCION debe tener al menos 5 caracteres")
+            errores.push("el campo de DESCRIPCION debe tener al menos 20 caracteres")
         }
 
 
