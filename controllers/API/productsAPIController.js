@@ -3,13 +3,14 @@ const path = require('path');
 const { validationResult } = require('express-validator');
 const db = require('../../src/database/models');
 const sequelize = db.sequelize;
-const { Op } = require("sequelize");
 const Products = db.Product;
 const Category = db.Category;
 const Color = db.Color;
+const { QueryTypes } = require('sequelize');
 
 const productsAPIController = {
-    'list': (req, res) => {
+    'list': async (req, res) => {
+        const countByCategory = await db.sequelize.query("SELECT categories.name AS categoría, COUNT(*) as Cantidad from music_box_db.products, music_box_db.categories WHERE products.category_id = categories.id GROUP BY products.category_id", { type: QueryTypes.SELECT });
        let promProducts = Products.findAll({
             attributes: ['id', 'name', 'price', 'description', 'image']
         })
@@ -23,15 +24,19 @@ const productsAPIController = {
                 
                 
             }
+            let lastProduct = products.pop();
             let respuesta = {
-                totalProd: products.length,
-                totalCat: categories.length,
+                
                 //categorias: categories.length,
                 meta: {
                     status : 200,
                     total: products.length,
                     url: 'api/products'
                 },
+                totalProd: products.length,
+                totalCat: categories.length,
+                lastProduct: lastProduct,
+                totalPorCat: countByCategory,
                 data: products
             }
                 res.json(respuesta);
