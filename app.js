@@ -4,6 +4,7 @@ const methodOverride =  require('method-override'); // Métodos PUT y DELETE
 const routesMain = require("./routers/main")
 const routesProduct = require('./routers/products')
 const routesUser = require('./routers/users')
+const cors = require('cors');
 const cookies = require('cookie-parser');
 const session = require("express-session");
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
@@ -25,6 +26,7 @@ app.use(express.static('public'));
 app.use(methodOverride('_method')); 
 app.use(express.json());
 app.use(userLoggedMiddleware);
+app.use(cors());
 app.set("view engine", "ejs");
 
 
