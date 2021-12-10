@@ -30,7 +30,7 @@ app.use(cors());
 app.set("view engine", "ejs");
 
 
-app.listen(process.env.PORT || 3000,()=>{console.log("server iniciado")});
+app.listen(process.env.PORT || 3001,()=>{console.log("server iniciado")});
 
 //Routes
 app.use("/",routesMain);

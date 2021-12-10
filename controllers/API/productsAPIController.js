@@ -10,17 +10,23 @@ const Color = db.Color;
 
 const productsAPIController = {
     'list': (req, res) => {
-        Products.findAll({
-            attributes: ['id', 'name', 'price', 'description', 'image'],
-            include: ['categories']
+       let promProducts = Products.findAll({
+            attributes: ['id', 'name', 'price', 'description', 'image']
         })
-        .then(products => {
+        let promCategories = Category.findAll({
+            attributes: ['name']
+        });
+		Promise.all([promProducts, promCategories])
+        .then(([products, categories]) => {
             for (let i = 0; i < products.length; i++) {
                 products[i].setDataValue('image', `http://localhost:3001/public/images/products/${products[i].image}`)
-                delete products[i].dataValues.categories.dataValues.id
+                
                 
             }
             let respuesta = {
+                totalProd: products.length,
+                totalCat: categories.length,
+                //categorias: categories.length,
                 meta: {
                     status : 200,
                     total: products.length,
