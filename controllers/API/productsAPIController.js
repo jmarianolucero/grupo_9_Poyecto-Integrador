@@ -11,6 +11,7 @@ const { QueryTypes } = require('sequelize');
 const productsAPIController = {
     'list': async (req, res) => {
         const countByCategory = await db.sequelize.query("SELECT categories.name AS categoría, COUNT(*) as Cantidad from music_box_db.products, music_box_db.categories WHERE products.category_id = categories.id GROUP BY products.category_id", { type: QueryTypes.SELECT });
+        const lastProductinDB = await db.sequelize.query("SELECT * from music_box_db.products ORDER BY products.id DESC LIMIT 1", { type: QueryTypes.SELECT });
        let promProducts = Products.findAll({
             attributes: ['id', 'name', 'price', 'description', 'image']
         })
@@ -24,7 +25,7 @@ const productsAPIController = {
                 
                 
             }
-            let lastProduct = products.pop();
+            let lastProduct = lastProductinDB 
             let respuesta = {
                 
                 //categorias: categories.length,
@@ -35,7 +36,7 @@ const productsAPIController = {
                 },
                 totalProd: products.length,
                 totalCat: categories.length,
-                lastProduct: lastProduct,
+                lastProduct: lastProductinDB,
                 totalPorCat: countByCategory,
                 data: products
             }
