@@ -16,6 +16,7 @@ const productsAPIController = {
         })
         .then(products => {
             for (let i = 0; i < products.length; i++) {
+                products[i].setDataValue('image', `http://localhost:3001/public/images/products/${products[i].image}`)
                 delete products[i].dataValues.categories.dataValues.id
                 
             }
@@ -40,6 +41,7 @@ const productsAPIController = {
             include: ['categories']
         })
             .then(product => {
+                    product.setDataValue('image', `http://localhost:3001/public/images/products/${product.image}`)
                     delete product.dataValues.categories.dataValues.id
         
                 let respuesta = {

@@ -10,6 +10,10 @@ const usersAPIController = {
             attributes: ['id', 'full_name', 'email', 'avatar'],
         })
         .then(users => {
+            for (let i = 0; i < users.length; i++) {
+                users[i].setDataValue('avatar', `http://localhost:3001/public/images/users/${users[i].avatar}`)
+                
+            }
             let respuesta = {
                 meta: {
                     status : 200,
@@ -26,7 +30,8 @@ const usersAPIController = {
         User.findByPk(req.params.id, {
             attributes: ['id', 'full_name', 'email', 'avatar']
         })
-            .then(user => {            
+            .then(user => {   
+                user.setDataValue('avatar', `http://localhost:3001/public/images/users/${user.avatar}`)         
                 let respuesta = {
                     meta: {
                         status: 200,
