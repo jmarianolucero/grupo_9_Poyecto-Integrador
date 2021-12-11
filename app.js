@@ -13,7 +13,7 @@ const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const apiUsersRouter = require('./routers/api/users')
 //API Products
 const apiProductsRouter = require('./routers/api/products')
-
+app.use(cors());
 // Middlewares
 app.use(session({
     secret:"its a secret",
@@ -26,7 +26,7 @@ app.use(express.static('public'));
 app.use(methodOverride('_method')); 
 app.use(express.json());
 app.use(userLoggedMiddleware);
-app.use(cors());
+
 app.set("view engine", "ejs");
 
 
