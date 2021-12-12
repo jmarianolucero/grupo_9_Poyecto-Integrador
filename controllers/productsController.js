@@ -68,6 +68,42 @@ const controller = {
 				res.render('./categories/percusion', { products: products })
 			})
 	},
+	sonido: (req, res) => {
+		Products.findAll({
+			include: ['categories'],
+			where: {
+				category_id: 4
+			}
+
+		})
+			.then(products => {
+				res.render('./categories/sonido', { products: products })
+			})
+	},
+	accesorios: (req, res) => {
+		Products.findAll({
+			include: ['categories'],
+			where: {
+				category_id: 5
+			}
+
+		})
+			.then(products => {
+				res.render('./categories/accesorios', { products: products })
+			})
+	},
+	taller: (req, res) => {
+		Products.findAll({
+			include: ['categories'],
+			where: {
+				category_id: 6
+			}
+
+		})
+			.then(products => {
+				res.render('./categories/taller', { products: products })
+			})
+	},
 	// Detail - Detalle de un producto
 	detail: (req, res) => {
 		Products.findByPk(req.params.id)

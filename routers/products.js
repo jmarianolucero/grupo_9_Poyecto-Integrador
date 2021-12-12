@@ -14,6 +14,9 @@ router.get('/', productsController.index);
 router.get('/viento', productsController.viento);
 router.get('/cuerdas', productsController.cuerdas);
 router.get('/percusion', productsController.percusion);
+router.get('/sonido', productsController.sonido);
+router.get('/accesorios', productsController.accesorios);
+router.get('/taller', productsController.taller);
 
 //SEARCH PRODUCTS
 router.get('/search', productsController.search);
