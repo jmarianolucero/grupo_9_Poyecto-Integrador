@@ -6,6 +6,7 @@ const productsController = require("../controllers/productsController");
 //Middlewares
 const fileUpload = require('../middlewares/multerProductsMiddleware');
 const productsValidations = require('../middlewares/validateProductsMiddleware');
+const authAdminMiddleware = require('../middlewares/authAdminMiddleware');
 
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', productsController.index);
@@ -22,19 +23,19 @@ router.get('/taller', productsController.taller);
 router.get('/search', productsController.search);
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/create', productsController.create); 
-router.post('/',  fileUpload.single('productImage'), productsValidations, productsController.store); 
+router.get('/create', authAdminMiddleware,productsController.create); 
+router.post('/',  authAdminMiddleware,fileUpload.single('productImage'), productsValidations, productsController.store); 
 
 
 /*** GET ONE PRODUCT ***/ 
 router.get('/:id', productsController.detail); 
 
 /*** EDIT ONE PRODUCT ***/ 
-router.get('/edit/:id', productsController.edit); 
-router.put('/edit/:id',  fileUpload.single('productImage'), productsValidations, productsController.update); 
+router.get('/edit/:id', authAdminMiddleware,productsController.edit); 
+router.put('/edit/:id',  authAdminMiddleware,fileUpload.single('productImage'), productsValidations, productsController.update); 
 
 
 /*** DELETE ONE PRODUCT ***/ 
-router.delete('/:id', productsController.destroy); 
+router.delete('/:id', authAdminMiddleware,productsController.destroy); 
 
 module.exports = router;

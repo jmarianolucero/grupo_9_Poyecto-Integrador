@@ -46,7 +46,7 @@
                         <form action="/carrito" method="GET">
                             <button type="submit" class="add-cart-btn">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
                         </form>
-                        <% if (locals.isLogged) { %>
+                        <% if (locals.isLogged && userLogged.category == 'admin') { %>
                             <div class="edit-delete-btns">
                                 <form action="/products/edit/<%= products.id %>" method="GET" style="display: inline-flex">
                             <button type="submit" class="action-button edit edit-btn">Editar Producto</button>
