@@ -44,4 +44,22 @@ Deltas:
 • Stop Doing: 
  Dejar actividades inconclusas.
 
+********************************************************************************
+  Retrospectiva del Séptimo Sprint:
+
+ • Start Doing:
+  La experiencia de sprints previos ayudó para que todas las metodoogías conocidas se utilicen, por lo que no consideramos agregar un Start Doing a este punto. Sí debemos profundizar en React para poder completar todo lo requerido. 
+
+• More Of: 
+ Continuamos proponiendo participación activa de integrantes y diversificación de tareas acorde. 
+
+• Keep Doing: 
+ Comunicación de cada agregado, modificación o sustracción de funcionalidades o elementos en general.
+
+• Less Of: 
+ Focalización sobre cosas secundarias o tareas no obligatorias, poniendo énfasis en los entregables principales. 
+ 
+• Stop Doing: 
+ No se presentaron puntos a destacar en este aspecto.
+
 
