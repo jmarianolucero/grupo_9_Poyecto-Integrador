@@ -20,7 +20,7 @@
                         <a href="/"><img src="/images/Logo Music Box.png" alt="Logo de Music Box"></a>
                       </div>
         
-                      <form>
+                      
                         <input type="text" id="login"  name="email" placeholder="Correo Electrónico" value="<%= locals.oldData ? oldData.email : null %>">
                         <div id="errorEmail" class="errorMsg hidden"></div>
                         <% if (locals.errors&&errors.email) {%>
@@ -38,7 +38,7 @@
                         <label for=""><input type="checkbox" name="rememberMe" class="rememberMe"> Recordar usuario</label>
                         
                         <input type="submit" value="Inicia Sesión">
-                      </form>
+                      
    
                 
                       <div id="formFooter">

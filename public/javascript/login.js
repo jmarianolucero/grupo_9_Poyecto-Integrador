@@ -1,7 +1,7 @@
-import isEmail from 'validator/lib/isEmail';
+//import isEmail from 'validator/lib/isEmail';
 
 window.addEventListener('load', function(){
-    let formulario = document.querySelector('caja');
+    let formulario = document.querySelector('.caja');
     formulario.addEventListener('submit', validacionForm) 
 })
 function validacionForm(e) {
@@ -9,16 +9,13 @@ function validacionForm(e) {
   
   
     //Email
-    const email = document.getElementById('login').value
-    const errorEmail = document.getElementById('errorEmail')
-    const charEmail = isEmail
+    const email = document.getElementById('login').value;
+    const errorEmail = document.getElementById('errorEmail');
+    const charEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)+\.\S+/.test(email)
     if (email === '') {
       errorEmail.classList.add('show')
       errorEmail.classList.remove('hidden')
       errorEmail.innerHTML = 'Debes ingresar tu correo electrónico'
-    }else if (email !== ''){
-        errorEmail.classList.remove('show')
-      errorEmail.classList.add('hidden')
     } else if (!charEmail) {
       errorEmail.classList.add('show')
       errorEmail.classList.remove('hidden')
@@ -35,14 +32,16 @@ function validacionForm(e) {
     const charPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/.test(
       password,
     )
-    if (password.length < 8) {
+    if (password == '') {
+      errorPassword.classList.add('show')
+      errorPassword.classList.remove('hidden')
+      errorPassword.innerHTML = 'Debes ingresar una conraseña'
+      return
+    }else if (password.length < 8) {
       errorPassword.classList.add('show')
       errorPassword.classList.remove('hidden')
       errorPassword.innerHTML = 'La contraseña debe tener al menos 8 caracteres'
       return
-    } else if(password.length > 8){
-        errorImage.classList.remove('show')
-        errorImage.classList.add('hidden')
     } else if (!charPass) {
       errorPassword.classList.add('show')
       errorPassword.classList.remove('hidden')
