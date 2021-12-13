@@ -62,16 +62,13 @@ function validacionForm(e) {
       errorPassword.classList.remove('hidden')
       errorPassword.innerHTML = 'La contraseña debe tener al menos 8 caracteres'
       return
-    } else if(password.length > 8){
-        errorImage.classList.remove('show')
-        errorImage.classList.add('hidden')
     } else if (!charPass) {
       errorPassword.classList.add('show')
       errorPassword.classList.remove('hidden')
       errorPassword.innerHTML =
         'La contraseña debe contener minúsculas, mayúsculas, números y carcateres especiales'
         return
-    }else if(charPass){
+    } else {
         errorImage.classList.remove('show')
         errorImage.classList.add('hidden')
     }
