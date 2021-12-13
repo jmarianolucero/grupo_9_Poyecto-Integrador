@@ -33,3 +33,9 @@ Sprints Entregados:
 - Sprint 4
 - Sprint 5
 - Sprint 6
+- Sprint 7
+- Sprint 8
+
+Dashboard Music Box:
+https://github.com/marianosim/dashboard-musicBox
+
