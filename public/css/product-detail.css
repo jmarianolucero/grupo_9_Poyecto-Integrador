@@ -28,6 +28,7 @@ main{
     margin-top: 35px;
     color: #46494c;
     margin-left: 15px;
+    text-align: justify;
 }
 .puntaje{
     display: flex;

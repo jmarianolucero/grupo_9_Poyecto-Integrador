@@ -159,6 +159,10 @@ form div input{
   li a.menuItem{
       padding: 10%;
   }
+  .userGreeting a{
+      color: white;
+      text-decoration: none;
+  }
 @media (min-width: 769px){
     .navbar ul {
         display: flex;
