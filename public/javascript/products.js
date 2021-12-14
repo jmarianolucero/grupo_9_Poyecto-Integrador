@@ -29,7 +29,7 @@ window.addEventListener("load", function() {
             let ulerrores =document.getElementById("errores")
             for (let i = 0; i < errores.length; i++) {
 
-                ulerrores.innerHTML += "<li>" + errores[i] + "</li>"
+                ulerrores.innerHTML += "<li class= 'text-danger'>" + errores[i] + "</li>"
 
             }
         }
