@@ -146,6 +146,7 @@ button{
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
   background-color: #1985a1;
+  cursor: pointer;
 }
 
 input[type=text] {
